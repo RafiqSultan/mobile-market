@@ -160,7 +160,7 @@ export default {};
   display: flex;
   background-color: #252f37;
   border-radius: 2rem;
-  margin: 4rem 1rem;
+  margin: 4.2rem 0.5rem;
   height: 400px;
   padding: 1rem 3rem;
 }
