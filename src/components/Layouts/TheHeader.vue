@@ -4,9 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="logo col-lg-2 col-md-12 col-sm-12 col-12">
-          <a class="navbar-brand" href="#"
-            ><span>RS</span>Movies <i class="bi bi-star-fill"></i
-          ></a>
+          <a class="navbar-brand" href="#"> </a>
         </div>
         <div class="col-lg-10 col-md-12 col-sm-12 col-12">
           <div class="row">
@@ -55,31 +53,15 @@
               <div class="user-setting">
                 <div class="icons search-icon" id="search-btn">
                   <i
-                    class="bi bi-search"
+                    class="fas fa-search"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Search"
                   ></i>
                 </div>
-                <div class="icons notification-icon" id="notification-btn">
-                  <i
-                    class="bi bi-bell"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="notification"
-                  ></i>
-                </div>
-                <div class="icons setting-icon">
-                  <i
-                    class="bi bi-gear"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="Setting"
-                  ></i>
-                </div>
                 <div class="icons" id="profile-form-btn">
                   <i
-                    class="bi bi-person"
+                    class="fa fa-person"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Profile"
@@ -104,42 +86,12 @@
             </button>
           </div>
         </div>
-        <!-- notifaction-form  -->
-        <div class="notification">
-          <div class="notif-card">
-            <div class="notif-img">
-              <img src="img/notification/01.jpg" alt="not-01" />
-            </div>
-            <div class="notif-time">
-              <h5>iron door</h5>
-              <p><i class="bi bi-clock"></i> 1 min ago</p>
-            </div>
-          </div>
-          <div class="notif-card">
-            <div class="notif-img">
-              <img src="img/notification/02.jpg" alt="not-02" />
-            </div>
-            <div class="notif-time">
-              <h5>iron door</h5>
-              <p><i class="bi bi-clock"></i> 3 min ago</p>
-            </div>
-          </div>
-          <div class="notif-card">
-            <div class="notif-img">
-              <img src="img/notification/03.jpg" alt="not-03" />
-            </div>
-            <div class="notif-time">
-              <h5>iron door</h5>
-              <p><i class="bi bi-clock"></i> 10 min ago</p>
-            </div>
-          </div>
-          <button>show all</button>
-        </div>
+
         <!-- profile-form  -->
         <div class="profile-form">
           <ul class="p-2 m-0">
             <li>
-              <a href="#"><i class="bi bi-person"></i> Profile</a>
+              <a href="#"><i class="fab fa-person"></i> Profile</a>
             </li>
             <li>
               <a href="#"><i class="bi bi-credit-card"></i>pricing plane</a>
@@ -158,34 +110,29 @@
 /* Navbar Section Start *********************************************************** */
 
 .sec-navbar {
-  color: #fff;
+  color: #000;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #252f37;
+  background-color: #fff;
+  box-shadow: 0 0 10px #000;
 }
 
-/* .sec-navbar .nav-item a {
-  color: var(--bg-color-text);
+.sec-navbar .nav-item a {
+  color: inherit;
+}
+
+/* .sec-navbar .nav-item a:hover {
+  color: var(--bg-color-red) !important;
 } */
 
-.sec-navbar .nav-item a:hover {
-  color: var(--bg-color-red) !important;
-}
-
-.sec-navbar .nav-item span {
-  padding: 0 8px;
-  opacity: 0.3;
-}
-
 .sec-navbar .user-setting {
-  background-color: #000;
   display: inline-flex;
-  color: var(--bg-color-text) !important;
+  color: #000 !important;
   font-size: 18px;
   height: 100%;
   width: 100%;
@@ -201,7 +148,7 @@
 }
 
 .sec-navbar .user-setting .icons i:hover:not(.bi-person) {
-  color: var(--bg-color-red) !important;
+  color: #fff !important;
 }
 
 .sec-navbar .user-setting .icons:last-child {
@@ -250,7 +197,7 @@
 }
 
 .sec-navbar .search button i {
-  color: var(--bg-color-red) !;
+  color: #000 !important;
 }
 
 .sec-navbar .dropdown-menu a {
@@ -262,82 +209,6 @@
 .sec-navbar .dropdown-menu a:hover {
   background-color: var(--bg-color-red);
   color: #fff !important;
-}
-
-/*  notifcation -form */
-
-.sec-navbar .notification-icon {
-  position: relative;
-  padding: 10px;
-}
-
-.sec-navbar .notification-icon::after {
-  content: "3";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 0;
-  right: 0;
-  background-color: var(--bg-color-red);
-  border-radius: 50%;
-  font-size: 12px;
-  text-align: center;
-}
-
-.sec-navbar .notification {
-  position: absolute;
-  width: 200px;
-  z-index: 100;
-  right: 13%;
-  opacity: 1;
-  background-color: var(--bg-color-text);
-  padding: 5px;
-  transform: scaleY(0);
-}
-
-.sec-navbar .notification.active {
-  transform: scaleY(1);
-}
-
-.sec-navbar .notification .notif-card {
-  border-bottom: 1px solid var(--bg-black);
-  width: 100%;
-  height: 5%;
-  color: var(--bg-black) !important;
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-.sec-navbar .notification .notif-card .notif-time h5 {
-  color: var(--bg-black) !important;
-  font-weight: 700;
-}
-
-.sec-navbar .notification .notif-card .notif-time p {
-  color: var(--bg-black) !important;
-  font-size: 16px;
-  text-transform: none;
-}
-
-.sec-navbar .notification .notif-card .notif-time i {
-  color: var(--bg-black) !important;
-  font-size: 16px;
-  margin-right: 4px;
-}
-
-.sec-navbar .notification button {
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-black);
-  text-transform: capitalize;
-  color: #fff;
-}
-
-.sec-navbar .notification button:hover {
-  background-color: var(--bg-color-red);
-  color: #fff;
-  border: 1px solid var(--bg-color-red) !important;
 }
 
 /* Profile form*/

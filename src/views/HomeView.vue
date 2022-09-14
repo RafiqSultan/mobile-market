@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <main></main>
+  <home-view></home-view>
 </template>
