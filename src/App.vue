@@ -10,7 +10,7 @@ import ProductsLine from "./views/productsLine.vue";
   <TheHeader></TheHeader>
   <LandingScreen></LandingScreen>
   <CardProduct></CardProduct>
-  <ProductsLine></ProductsLine>
+  <!-- <ProductsLine></ProductsLine> -->
 
   <RouterView />
 </template>

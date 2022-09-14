@@ -59,9 +59,25 @@
                     title="Search"
                   ></i>
                 </div>
+                <div class="icons search-icon" id="search-btn">
+                  <i
+                    class="fa-solid fa-heart"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Search"
+                  ></i>
+                </div>
+                <div class="icons search-icon" id="search-btn">
+                  <i
+                    class="fa fa-cart-shopping"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Search"
+                  ></i>
+                </div>
                 <div class="icons" id="profile-form-btn">
                   <i
-                    class="fa fa-person"
+                    class="fa-solid fa-user"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Profile"
@@ -91,7 +107,7 @@
         <div class="profile-form">
           <ul class="p-2 m-0">
             <li>
-              <a href="#"><i class="fab fa-person"></i> Profile</a>
+              <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
             </li>
             <li>
               <a href="#"><i class="bi bi-credit-card"></i>pricing plane</a>

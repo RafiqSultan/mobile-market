@@ -1,35 +1,39 @@
 <template>
   <div class="container">
     <div class="card">
-      <div class="top-div">
-        <span><i class="fa fa-angle-left"></i></span> <button>NEW</button>
-        <span><i class="fa fa-shopping-cart"></i><small></small></span>
+      <div class="img">
+        <img
+          src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SL1500_.jpg"
+          alt="mobile"
+        />
       </div>
 
       <div class="bottom-div">
         <h3>Fanbyn</h3>
+        <div class="top-div">
+          <span><i class="fa-solid fa-heart"></i></span>
+        </div>
       </div>
-
-      <p>
-        The Fanbyn,with its deep sitting position and high legs,is ideal for
-        relaxing after a busy day.
-      </p>
+      <div class="star">
+        <i class="fa-solid fa-star" v-for="star in 4" :key="satr"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+      </div>
 
       <div class="last-section">
         <div class="last">
-          <i class="fa fa-plus-square"></i> <button>Add to cart</button>
+          <button><i class="fa-solid fa-plus"></i></button>
         </div>
-        <input type="hidden" value="200" id="product_input_price" />
+
         <p>$<span id="price">200</span></p>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
-  height: 400px;
-  width: 320px;
+  height: 420px;
+  width: 250px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -37,192 +41,94 @@
   position: relative;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-}
+  margin-bottom: 100px;
 
-.top-div {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
+  //   Style img
+  .img {
+    width: 100%;
+    height: 65%;
+    padding: 0.2rem;
 
-.top-div span {
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-color: #a8a7a3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bottom-div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 
-.top-div button {
-  background-color: #fff;
-  font-size: 11px;
-  height: 20px;
-  width: 35px;
-  position: absolute;
-  top: 5px;
-  left: 125px;
-}
+    .bottom-div h3 {
+      font-weight: 700;
+    }
+    .top-div span {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: #97d2ec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .fa-heart {
+        font-size: 20px;
+      }
+    }
+  }
+  .star {
+    .fa-star,
+    .fa-star-half-stroke {
+      color: #f0bb0d;
+    }
+  }
+  .last-section {
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: #132228;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+    text-align: center;
+    cursor: pointer;
 
-.top-div span small {
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background-color: red;
-  position: absolute;
-  right: -5px;
-  bottom: 16px;
-  border: 3px solid #fff;
-}
+    .last {
+      padding: 0.5rem;
+      button {
+        width: 40px !important;
+        height: 40px;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 20px;
 
-.image-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        .fa-plus {
+          font-size: 20px !important;
+        }
+      }
+    }
 
-.image-section img {
-  height: 165px;
-  width: 300px;
-  margin-top: -20px;
-}
-.circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 185px;
-  left: 68px;
-}
+    p {
+      color: #f6f6f6;
+      margin: auto;
+      font-size: 20px;
+    }
 
-.circle span {
-  height: 30px;
-  width: 30px;
-  background-color: black;
-  border-radius: 50%;
-  top: 40px;
-  right: 20px;
-  margin-right: 20px;
-}
+    &:hover {
+      background-color: black;
+    }
 
-.circle span:nth-child(1) {
-  background-color: #d07619;
+    .last button:hover {
+      background-color: #3e3535;
+    }
+  }
 }
+</style> scoped>
 
-.circle span:nth-child(2) {
-  background-color: #5c5952;
-}
 
-.circle span:nth-child(3) {
-  background-color: #e39333;
-}
 
-.circle span:nth-child(4) {
-  background-color: #668489;
-}
 
-.bottom-div {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
 
-.bottom-div h3 {
-  font-weight: 700;
-}
-
-.sign {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-}
-
-.sign span {
-  height: 30px;
-  width: 30px;
-  background-color: black;
-  display: flex;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 12px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.sign small {
-  font-weight: 700;
-  margin-top: -14px;
-  margin-right: 4px;
-  height: 2px;
-  width: 2px;
-}
-
-.sign span i {
-  margin-top: 5px;
-}
-
-.card p {
-  margin-top: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.last-section {
-  margin-top: 20px;
-  height: 50px;
-  width: 100%;
-  background-color: #132228;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-
-.last-section .last {
-  padding: 20px;
-  position: relative;
-}
-
-.last i {
-  font-size: 35px;
-  margin-top: 2px;
-  color: #f6f6f6;
-}
-
-.last button {
-  position: absolute;
-  height: 20px;
-  width: 70px;
-  top: 30px;
-  left: 55px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  border: none;
-  background-color: #132228;
-  border-radius: 10px;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-
-.last-section p {
-  color: #f6f6f6;
-  padding: 20px;
-  margin-top: 1px;
-}
-
-.last-section:hover {
-  background-color: black;
-}
-
-.last button:hover {
-  background-color: #3e3535;
-}
-</style>
