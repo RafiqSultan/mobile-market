@@ -2,10 +2,10 @@ import { createApp } from 'vue'
 import { createStore } from 'vuex'
 
 // Create a new store instance.
-const store = createStore({
+ const store = createStore({
   state:{
 
-    mobile:[
+    phones:[
         {
             "id": 1,
             "model": "Google Pixel 3",
@@ -54,7 +54,127 @@ const store = createStore({
             "image": "https://the-mobile-store.s3.amazonaws.com/img/samsunggalaxya72018.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBQJFCTCQPALOLKQ%2F20220914%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20220914T162254Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e67f6dc45090e0c05c967fde25e7ff8dcb9dbae1b4126e255dea19f733dc76f6",
             "price": 533
         }
+    ],
+
+    hundfree:[
+        {
+            "id": 1,
+            "model": "Plantronics by Poly Voyager",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71VwcGhEeJL._AC_UY218_.jpg",
+            "price": 36
+        },
+        {
+            "id": 2,
+            "model": "2 X.Vilitur Motorcycle",
+            "image": "https://m.media-amazon.com/images/I/41g0I3JCcvL._AC_UY218_.jpg",
+            "price": 175
+        },
+        {
+            "id": 3,
+            "model": "SAMSUNG Galaxy Buds 2 Pro",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61Qqg+T8nsL._AC_UY218_.jpg",
+            "price": 34
+        },
+        {
+            "id": 4,
+            "model": "Apple AirPods Max",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81NIpE9-5mL._AC_SX522_.jpg",
+            "price": 45
+        },
+        {
+            "id": 5,
+            "model": "Apple AirPods Pro",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71zny7BTRlL._AC_UY218_.jpg",
+            "price": 80
+        },
+        {
+            "id": 6,
+            "model": "Apple AirPods Pro",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71bhWgQK-cL._AC_SX522_.jpg",
+            "price": 46
+        },
+        
     ]
+    ,
+    samsung:[
+        {
+            "id": 1,
+            "model": "SAMSUNG Galaxy S22 Ultra ",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61nhOdlKpDL._AC_SX466_.jpg",
+            "price": 1869
+        },
+        {
+            "id": 2,
+            "model": "SAMSUNG Galaxy Z Fold 4",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71DhIuzEemL._AC_SX466_.jpg",
+            "price": 959
+        },
+        {
+            "id": 3,
+            "model": "Samsung Galaxy Note 20 Ultra 5G",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71U1rKhe39L._AC_UY218_.jpg",
+            "price": 1749
+        },
+        {
+            "id": 4,
+            "model": "AMSUNG Galaxy Z Flip 3 5G",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51DhX1XpliL._AC_SX466_.jpg",
+            "price": 1719
+        },
+        {
+            "id": 5,
+            "model": "SAMSUNG Galaxy S21 Ultra 5G",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61bLefD79-L._AC_SX679_.jpg",
+            "price": 1549
+        },
+        {
+            "id": 6,
+            "model": "SAMSUNG Galaxy A53 5G",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71HN4P-pd5L._AC_UY218_.jpg",
+            "price": 600
+        },
+        
+    ],
+    apple:[
+        {
+            "id": 1,
+            "model": "Apple iPhone 12",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/710mNDEecxL._AC_UY218_.jpg",
+            "price": 498
+        },
+        {
+            "id": 2,
+            "model": "Apple iPhone 13 Pro Max",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61OgrkMY4XL._AC_UY218_.jpg",
+            "price": 1259
+        },
+        {
+            "id": 3,
+            "model": "2020 Apple iPad Pro",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81Pi4nhjlwL._AC_UY218_.jpg",
+            "price": 1029
+        },
+        {
+            "id": 4,
+            "model": "iPhone SE 16GB",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81KMjBNIAbL._AC_UL320_.jpg",
+            "price": 600
+        },
+        {
+            "id": 5,
+            "model": "Apple iPhone 6",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41gLxTGDHSL._AC_UL320_.jpg",
+            "price": 700
+        },
+        {
+            "id": 6,
+            "model": "Apple iPhone 11 Pro",
+            "image": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51cUdVn8N1L._AC_UL320_.jpg",
+            "price": 1247
+        },
+        
+    ]
+   
     
   }
  

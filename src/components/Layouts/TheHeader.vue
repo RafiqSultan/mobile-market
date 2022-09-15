@@ -27,19 +27,17 @@
                 >
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a
-                        class="nav-link active"
-                        aria-current="page"
-                        href="index.html"
-                      >
-                        Home</a
+                      <router-link class="nav-link" tag="a" to="\home"
+                        >Home</router-link
                       >
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">my order</a>
+                      <router-link class="nav-link" tag="a" to="\products"
+                        >my order</router-link
+                      >
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">About US</a>

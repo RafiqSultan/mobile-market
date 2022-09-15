@@ -158,9 +158,9 @@ export default {};
 <style scoped>
 .landing {
   display: flex;
-  background-color: #252f37;
+  background-color: #111;
   border-radius: 2rem;
-  margin: 4.2rem 0.5rem;
+  margin: 1rem;
   height: 400px;
   padding: 1rem 3rem;
 }

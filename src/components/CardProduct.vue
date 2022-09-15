@@ -1,53 +1,59 @@
 <template>
   <div class="container">
-    <div class="card">
-      <div class="details">
-        <span><i class="fa-solid fa-heart"></i></span>
-        <span><i class="fa-solid fa-heart"></i></span>
-      </div>
-
+    <div class="cardProduct">
       <div class="img">
-        <img
-          src="https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SL1500_.jpg"
-          alt="mobile"
-        />
+        <img :src="phoneImg" alt="phone" />
       </div>
-
       <div class="model-Rate">
-        <h3>Fanbyn</h3>
+        <h5>{{ phoneTitle }}</h5>
         <div class="star">
           <i class="fa-solid fa-star" v-for="star in 4"></i>
           <i class="fa-solid fa-star-half-stroke"></i>
         </div>
+        <p>
+          $<span id="price">{{ phonePrice }}</span>
+        </p>
       </div>
 
       <div class="addCard">
-        <div class="addToCart">
-          <button><i class="fa-solid fa-plus"></i></button>
+        <div class="detailsCard">
+          <span><i class="fa fa-cart-shopping"></i></span>
+          <span><i class="fa-solid fa-heart"></i></span>
+          <span><i class="fa-solid fa-heart"></i></span>
         </div>
-        <p>$<span id="price">200</span></p>
       </div>
     </div>
   </div>
 </template>
 
+<!-- Script js data -->
+<script>
+export default {
+  props: ["phoneTitle", "phoneImg", "phonePrice"],
+};
+</script>
+
 <style lang="scss" scoped>
 // *Style Card Product
-.card {
-  height: 420px;
+.cardProduct {
+  height: 300px;
   width: 250px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 1.5px #111;
   border-radius: 10px;
-  padding: 10px;
+  padding: 0 !important;
   box-sizing: border-box;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
   overflow: hidden;
-  margin-bottom: 100px;
 
   //   Style img
   .img {
-    width: 100%;
-    height: 60%;
+    width: 60%;
+    height: 50%;
     padding: 0.5rem;
 
     img {
@@ -55,85 +61,59 @@
       height: 100%;
     }
   }
-  .details {
+}
+.model-Rate {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 0.5rem;
+  h5 {
+    font-weight: 500;
+    margin: 0;
+  }
+  p {
+    color: #000;
+    margin: auto;
+    font-size: 20px;
+  }
+  .star {
+    .fa-star,
+    .fa-star-half-stroke {
+      color: #f0bb0d;
+    }
+  }
+}
+
+.addCard {
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.5s;
+  text-align: center;
+  cursor: pointer;
+
+  .detailsCard {
+    padding: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+    justify-content: space-evenly;
+
     span {
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
       border-radius: 50%;
       background-color: #97d2ec;
       display: flex;
       justify-content: center;
       align-items: center;
       .fa-heart {
-        font-size: 20px;
-      }
-    }
-  }
-  .model-Rate {
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 0 0.5rem;
-    h3 {
-      font-weight: 500;
-    }
-    .star {
-      .fa-star,
-      .fa-star-half-stroke {
-        color: #f0bb0d;
+        font-size: 23px;
       }
     }
   }
 }
-
-.addCard {
-  margin-top: 10px;
-  height: 50px;
-  width: 100%;
-  background-color: #132228;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.5s;
-  text-align: center;
-  cursor: pointer;
-
-  .addToCart {
-    padding: 0.5rem;
-    button {
-      width: 40px !important;
-      height: 40px;
-      border-radius: 10px;
-      text-align: center;
-
-      .fa-plus {
-        font-size: 25px !important;
-        margin-top: auto;
-      }
-    }
-  }
-
-  p {
-    color: #f6f6f6;
-    margin: auto;
-    font-size: 20px;
-  }
-
-  &:hover {
-    background-color: black;
-  }
-
-  .last button:hover {
-    background-color: #3e3535;
-  }
-}
-</style> scoped>
+</style> 
 
 
 
