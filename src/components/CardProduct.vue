@@ -36,12 +36,12 @@ export default {
 <style lang="scss" scoped>
 // *Style Card Product
 .cardProduct {
-  height: 300px;
+  max-height: 330px;
   width: 250px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 1.5px #111;
   border-radius: 10px;
-  padding: 0 !important;
+  padding: 10px !important;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -52,9 +52,9 @@ export default {
 
   //   Style img
   .img {
-    width: 60%;
-    height: 50%;
-    padding: 0.5rem;
+    width: 50%;
+    max-height: 50%;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -70,12 +70,13 @@ export default {
   padding: 0 0.5rem;
   h5 {
     font-weight: 500;
-    margin: 0;
+    margin: 0 !important;
   }
   p {
-    color: #000;
+    color: #5943b5;
     margin: auto;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
   }
   .star {
     .fa-star,

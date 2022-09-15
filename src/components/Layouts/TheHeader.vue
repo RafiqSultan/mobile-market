@@ -3,9 +3,17 @@
   <section class="sec-navbar" id="navbar">
     <div class="container">
       <div class="row">
+        <!-- Logo  -->
         <div class="logo col-lg-2 col-md-12 col-sm-12 col-12">
-          <a class="navbar-brand" href="#"> </a>
+          <a class="navbar-brand">
+            <img
+              src="../../assets/mobile-logo.png"
+              alt="logo"
+              width="70"
+              height="50"
+          /></a>
         </div>
+        <!-- Links of page -->
         <div class="col-lg-10 col-md-12 col-sm-12 col-12">
           <div class="row">
             <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-6">
@@ -27,15 +35,15 @@
                 >
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <router-link class="nav-link" tag="a" to="\home"
-                        >Home</router-link
+                      <router-link class="nav-link" to="/">Home</router-link>
+                    </li>
+                    <li class="nav-item">
+                      <router-link class="nav-link" to="/products"
+                        >Product</router-link
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                      <router-link class="nav-link" tag="a" to="\products"
+                      <router-link class="nav-link" tag="a" to="/order"
                         >my order</router-link
                       >
                     </li>
@@ -86,8 +94,8 @@
           </div>
         </div>
       </div>
+      <!-- Search-form  -->
       <div class="row">
-        <!-- Search-form  -->
         <div class="search col-lg-8 col-md-8 col-sm-8 col-10" id="search">
           <div class="input-group">
             <input
@@ -133,7 +141,7 @@
   right: 0;
   z-index: 1000;
   background-color: #fff;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 3px #111;
 }
 
 .sec-navbar .nav-item a {

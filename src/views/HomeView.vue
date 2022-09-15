@@ -1,17 +1,20 @@
 
 <template>
+  <TheHeader />
   <LandingScreen />
   <NewProduct />
 </template>
 
 <script>
-import NewProduct from "./NewProduct.vue";
+import TheHeader from "../components/Layouts/TheHeader.vue";
 import LandingScreen from "../components/LandingScreen.vue";
+import NewProduct from "../views/NewProduct.vue";
 
 export default {
   components: {
-    NewProduct,
+    TheHeader,
     LandingScreen,
+    NewProduct,
   },
 };
 </script>

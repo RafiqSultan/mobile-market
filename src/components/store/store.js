@@ -56,7 +56,7 @@ import { createStore } from 'vuex'
         }
     ],
 
-    hundfree:[
+    handsfree:[
         {
             "id": 1,
             "model": "Plantronics by Poly Voyager",
@@ -94,8 +94,7 @@ import { createStore } from 'vuex'
             "price": 46
         },
         
-    ]
-    ,
+    ],
     samsung:[
         {
             "id": 1,
@@ -173,7 +172,7 @@ import { createStore } from 'vuex'
             "price": 1247
         },
         
-    ]
+    ],
    
     
   }
