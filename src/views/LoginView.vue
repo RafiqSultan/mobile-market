@@ -2,10 +2,10 @@
   <div
     class="
       container-fluid
-      mobile-home
       px-1 px-md-5 px-lg-1 px-xl-5
       py-5
       mx-auto
+      mobile-home
     "
   >
     <div class="card card0 border-0">
@@ -13,70 +13,81 @@
         <div class="col-lg-6">
           <div class="card1 pb-5">
             <div class="row">
-              <img src="https://i.imgur.com/CXQmsmF.png" class="logo" />
+              <img
+                src="../assets/mobile-logo1-removebg-preview.png"
+                class="logo"
+              />
             </div>
             <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
-              <img src="https://i.imgur.com/uNGdWHi.png" class="image" />
+              <img src="../assets/mobile_vector.jpg" class="image" />
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card2 card border-0 px-4 py-5">
             <div class="row mb-4 px-3">
-              <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
+              <h2 class="mb-0 mr-4 mt-2">
+                Login <span style="font-size: 20px">with</span>
+              </h2>
               <div class="facebook text-center mr-3">
-                <div class="fab fa-facebook"></div>
+                <i class="fab fa-facebook"></i>
               </div>
               <div class="twitter text-center mr-3">
                 <div class="fab fa-twitter"></div>
               </div>
-              <div class="linkedin text-center mr-3">
-                <div class="fab fa-linkedin"></div>
+              <div class="google text-center mr-3">
+                <div class="fab fa-google"></div>
               </div>
             </div>
-            <div class="row px-3 mb-4">
+            <div class="row px-3">
               <div class="line"></div>
               <small class="or text-center">Or</small>
               <div class="line"></div>
             </div>
-            <div class="row px-3">
-              <label class="mb-1"
-                ><h6 class="mb-0 text-sm">Email Address</h6></label
-              >
-              <input
-                class="mb-4"
-                type="text"
-                name="email"
-                placeholder="Enter a valid email address"
-              />
-            </div>
-            <div class="row px-3">
-              <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter password"
-              />
-            </div>
-            <div class="row px-3 mb-4">
-              <div class="custom-control custom-checkbox custom-control-inline">
+            <form>
+              <div class="row">
+                <label><h6>Username or Email</h6> </label>
                 <input
-                  id="chk1"
-                  type="checkbox"
-                  name="chk"
-                  class="custom-control-input"
+                  type="text"
+                  name="email"
+                  placeholder="Enter a valid email address"
                 />
-                <label for="chk1" class="custom-control-label text-sm"
-                  >Remember me</label
-                >
               </div>
-              <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
-            </div>
-            <div class="row mb-3 px-3">
-              <button type="submit" class="btn btn-blue text-center">
-                Login
-              </button>
-            </div>
+              <div class="row">
+                <label><h6>Password</h6> </label>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Enter a valid email address"
+                />
+              </div>
+              <div class="row px-3 mb-4">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        class="checkbox"
+                        name="checkbox"
+                      />Remember me
+                    </div>
+
+                    <a href="#" class="forget text-sm">Forgot Password?</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3 px-3">
+                <button type="submit" class="btn btn-blue text-center">
+                  Login
+                </button>
+              </div>
+            </form>
+
             <div class="row mb-4 px-3">
               <small class="font-weight-bold"
                 >Don't have an account?
@@ -93,6 +104,10 @@
 
 
 <style scoped>
+.mobile-home {
+  background-image: url(../assets/mobile-market.jpg);
+  background-size: cover;
+}
 .card0 {
   box-shadow: 0px 4px 8px 0px #757575;
   border-radius: 0px;
@@ -121,36 +136,48 @@
 .facebook {
   background-color: #3b5998;
   color: #fff;
-  font-size: 18px;
-  padding-top: 5px;
+  font-size: 33px;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
+}
+.facebook,
+.twitter,
+.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 }
 
 .twitter {
   background-color: #1da1f2;
   color: #fff;
-  font-size: 18px;
-  padding-top: 5px;
+  font-size: 22px;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
 
-.linkedin {
+.google {
   background-color: #2867b2;
   color: #fff;
-  font-size: 18px;
-  padding-top: 5px;
+  font-size: 22px;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
-
+form {
+  padding: 20px;
+}
+label {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-left: 5px !important;
+}
 .line {
   height: 1px;
   width: 45%;
@@ -162,17 +189,17 @@
   width: 10%;
   font-weight: bold;
 }
-
-.text-sm {
-  font-size: 14px !important;
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: -25px !important;
+  padding-left: 0 !important;
 }
-
-::placeholder {
-  color: #bdbdbd;
-  opacity: 1;
-  font-weight: 300;
+.forget {
+  margin-right: -27px !important;
+  text-align: right;
 }
-
 :-ms-input-placeholder {
   color: #bdbdbd;
   font-weight: 300;
@@ -183,11 +210,10 @@
   font-weight: 300;
 }
 
-input,
-textarea {
-  padding: 10px 12px 10px 12px;
+input {
+  padding: 10px;
   border: 1px solid lightgrey;
-  border-radius: 2px;
+  border-radius: 10px;
   margin-bottom: 5px;
   margin-top: 2px;
   width: 100%;
@@ -223,18 +249,18 @@ a {
   width: 150px;
   color: #fff;
   border-radius: 2px;
+  border-radius: 10px;
 }
 
 .btn-blue:hover {
-  background-color: #000;
+  background-color: #101330 !important;
   cursor: pointer;
+  color: #fff !important;
 }
 
 .bg-blue {
-  color: #fff;
   background-color: #1a237e;
 }
-
 @media screen and (max-width: 991px) {
   .logo {
     margin-left: 0px;
