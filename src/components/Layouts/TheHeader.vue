@@ -7,7 +7,7 @@
         <div class="logo col-lg-2 col-md-12 col-sm-12 col-12">
           <a class="navbar-brand">
             <img
-              src="../../assets/mobile-logo.png"
+              src="../../assets/mobile-logo1-removebg-preview.png"
               alt="logo"
               width="70"
               height="50"
@@ -48,7 +48,9 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">About US</a>
+                      <router-link tag="a" class="nav-link" to="/contact"
+                        >Contact US</router-link
+                      >
                     </li>
                   </ul>
                 </div>
