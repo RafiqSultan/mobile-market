@@ -17,7 +17,7 @@
 
       <div class="addCard">
         <div class="detailsCard">
-          <span><i class="fa fa-cart-shopping"></i></span>
+          <span @click="addToCart"><i class="fa fa-cart-shopping"></i></span>
           <span><i class="fa-solid fa-heart"></i></span>
           <span><i class="fa-solid fa-heart"></i></span>
         </div>
@@ -30,6 +30,25 @@
 <script>
 export default {
   props: ["phoneTitle", "phoneImg", "phonePrice"],
+  data() {
+    return {};
+  },
+  computed: {
+    addToCart() {
+      fetch(
+        "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            model: this.phoneTitle,
+            img: this.phoneImg,
+            price: this.phonePrice,
+          }),
+        }
+      );
+    },
+  },
 };
 </script>
 

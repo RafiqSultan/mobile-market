@@ -25,7 +25,7 @@
         </div>
         <div class="col-lg-6">
           <div class="card2 card border-0 px-4 py-5">
-            <div class="row mb-4 px-3">
+            <div class="row mb-4 px-3 col-lg-12 col-md-12 mx-auto">
               <h2 class="mb-0 mr-4 mt-2">
                 SignUp <span style="font-size: 20px">with</span>
               </h2>
@@ -259,7 +259,7 @@ a {
 }
 @media screen and (max-width: 991px) {
   .logo {
-    margin-left: 0px;
+    margin: auto;
   }
 
   .image {
@@ -276,4 +276,6 @@ a {
     margin: 0px 15px;
   }
 }
+/* @media (max-width: 530px) {
+  } */
 </style>

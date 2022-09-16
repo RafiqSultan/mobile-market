@@ -10,7 +10,7 @@
   >
     <div class="card card0 border-0">
       <div class="row d-flex">
-        <div class="col-lg-6">
+        <div class="col-lg-12 col-md-12 mx-auto">
           <div class="card1 pb-5">
             <div class="row">
               <img
@@ -25,7 +25,7 @@
         </div>
         <div class="col-lg-6">
           <div class="card2 card border-0 px-4 py-5">
-            <div class="row mb-4 px-3">
+            <div class="row mb-4 px-3 col-lg-12 col-md-12 mx-auto">
               <h2 class="mb-0 mr-4 mt-2">
                 Login <span style="font-size: 20px">with</span>
               </h2>
@@ -286,5 +286,8 @@ a {
     border-top: 1px solid #eeeeee !important;
     margin: 0px 15px;
   }
+  /* @media () {
+  
+ } */
 }
 </style>

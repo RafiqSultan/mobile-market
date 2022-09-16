@@ -1,4 +1,5 @@
 <template>
+  <TheHeader />
   <div class="wrapper">
     <div class="overlay">
       <div class="container">
@@ -71,6 +72,12 @@
     </div>
   </div>
 </template>
+<script>
+import TheHeader from "../components/Layouts/TheHeader.vue";
+export default {
+  components: { TheHeader },
+};
+</script>
 
 <style scoped>
 .wrapper {

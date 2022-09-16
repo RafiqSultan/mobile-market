@@ -1,6 +1,6 @@
 <template>
   <!-- Start Navbar Section --------------------------------------------------------  -->
-  <section class="sec-navbar" id="navbar">
+  <section class="sec-navbar d-flex align-items-center" id="navbar">
     <div class="container">
       <div class="row">
         <!-- Logo  -->
@@ -27,13 +27,13 @@
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <i class="bi bi-list"></i>
+                  <i class="fas fa-list"></i>
                 </button>
                 <div
                   class="collapse navbar-collapse"
                   id="navbarNavDropdown-main"
                 >
-                  <ul class="navbar-nav">
+                  <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                       <router-link class="nav-link" to="/">Home</router-link>
                     </li>
@@ -80,13 +80,29 @@
                     data-bs-placement="bottom"
                   ></i>
                 </div>
-                <div class="icons search-icon" id="search-btn">
+                <!-- Cart  -->
+                <div
+                  class="icons search-icon"
+                  id="search-btn"
+                  @click="showCartItem"
+                >
                   <i
                     class="fa fa-cart-shopping"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Cart"
                   ></i>
+                  <div
+                    class="
+                      cart
+                      d-flex
+                      align-items-lg-center
+                      justify-content-center
+                    "
+                    v-if="cartNumber > 0"
+                  >
+                    <span>{{ cartNumber }}</span>
+                  </div>
                 </div>
                 <!-- Profile Icon -->
                 <div
@@ -138,19 +154,36 @@
             </li>
           </ul>
         </div>
+        <!-- Show Cart Item -->
+        <div v-if="showCart == 'show'">
+          <CartItem
+            v-for="item in itemCart"
+            :key="item.id"
+            :phoneImg="item.phoneImg"
+            :phoneModel="item.phoneModel"
+            :phonePrice="item.phonePrice"
+          />
+        </div>
       </div>
     </div>
   </section>
 </template>
 <!-- Script  -->
 <script>
+import CartItem from "../CartItem.vue";
 export default {
+  components: {
+    CartItem,
+  },
   data() {
     return {
       profileAcive: null,
       searchActive: null,
       cartActive: null,
       favoriteActive: null,
+      cartNumber: 0,
+      itemCart: [],
+      showCart: null,
     };
   },
   methods: {
@@ -168,6 +201,30 @@ export default {
         this.searchActive = option;
       }
       console.log(this.searchActive);
+    },
+    showCartItem() {
+      this.showCart = "show";
+      this.cartNumber = this.itemCart.length;
+      fetch(
+        "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json"
+      )
+        .then((Response) => {
+          if (Response.ok) {
+            return Response.json();
+          }
+        })
+        .then((data) => {
+          const results = [];
+          for (const id in data) {
+            results.push({
+              id: id,
+              phoneImg: data[id].img,
+              phoneModel: data[id].model,
+              phonePrice: data[id].price,
+            });
+          }
+          this.itemCart = results;
+        });
     },
   },
 };
@@ -210,11 +267,32 @@ export default {
 .sec-navbar .user-setting .icons {
   cursor: pointer;
   text-align: center;
+  padding: 10px;
   margin: 5px;
+  background-color: #00293c;
+  color: #fff;
+  width: 50xp;
+  height: 40px;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0.9;
 }
-
-.sec-navbar .user-setting .icons i:hover:not(.bi-person) {
-  color: #fff !important;
+.sec-navbar .user-setting .icons .cart {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  background-color: #f00 !important;
+  z-index: 1000;
+  border-radius: 50%;
+  font-size: 13px;
+  padding: 5px;
+  line-height: 10px;
 }
 
 /*  search -form */
@@ -320,13 +398,14 @@ export default {
     height: fit-content;
   }
   .sec-navbar .collapse {
-    background-color: var(--bg-color-text);
+    background-color: #fff !important;
     z-index: 1000 !important;
     transition: none !important;
   }
   .sec-navbar .navbar-toggler {
-    background-color: var(--bg-color-red);
+    background-color: #000;
     color: #fff !important;
+    font-size: 25px !important;
     border: none !important;
   }
   .sec-navbar .collapse .navbar-expand-lg {
@@ -338,7 +417,7 @@ export default {
     z-index: 100;
   }
   .sec-navbar .collapse a:hover {
-    color: #fff !important;
+    color: #f00 !important;
     z-index: 100;
     background-color: var(--bg-color-red);
   }
@@ -347,8 +426,5 @@ export default {
     top: 20vh;
     margin-left: 20px;
   }
-  /* .sec-navbar .search input {
-                padding: 10px 20px;
-            } */
 }
 </style>
