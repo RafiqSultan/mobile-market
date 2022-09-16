@@ -50,15 +50,15 @@
                 <input
                   type="text"
                   name="email"
-                  placeholder="Enter a valid email address"
+                  placeholder="Enter username or email"
                 />
               </div>
               <div class="row">
                 <label><h6>Password</h6> </label>
                 <input
-                  type="text"
-                  name="email"
-                  placeholder="Enter a valid email address"
+                  type="password"
+                  name="password"
+                  placeholder="Enter Password"
                 />
               </div>
               <div class="row px-3 mb-4">
@@ -82,16 +82,22 @@
               </div>
 
               <div class="row mb-3 px-3">
-                <button type="submit" class="btn btn-blue text-center">
+                <router-link
+                  to="/"
+                  type="submit"
+                  class="btn btn-blue text-center"
+                >
                   Login
-                </button>
+                </router-link>
               </div>
             </form>
 
             <div class="row mb-4 px-3">
               <small class="font-weight-bold"
                 >Don't have an account?
-                <a class="text-danger">Register</a></small
+                <router-link tag="a" to="/signup" class="text-danger"
+                  >Register</router-link
+                ></small
               >
             </div>
           </div>
@@ -148,7 +154,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px 0;
+  margin: 10px 5px;
 }
 
 .twitter {
@@ -250,6 +256,7 @@ a {
   color: #fff;
   border-radius: 2px;
   border-radius: 10px;
+  margin-left: -16px !important;
 }
 
 .btn-blue:hover {
