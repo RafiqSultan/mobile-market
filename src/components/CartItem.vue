@@ -16,7 +16,7 @@
         </div>
         <!-- Btn Checkout -->
         <div class="btn_checkout">
-          <a href=""> Checkout</a>
+          <router-link tag="a" to="/checkout"> Checkout</router-link>
         </div>
       </div>
     </div>

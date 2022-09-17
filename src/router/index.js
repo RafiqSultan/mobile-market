@@ -6,6 +6,7 @@ import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
 import ContactView from '../views/ContactView.vue'
 import ProfileView from '../views/ProfileView.vue'
+import CheckoutView from '../views/CheckoutView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component:ProfileView
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component:CheckoutView
     },
     {
       path: '/about',
