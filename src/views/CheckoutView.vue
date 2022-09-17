@@ -3,7 +3,12 @@
   <div class="container checkout px-4 py-5 mx-auto">
     <!-- Cart Order Buy -->
     <div class="row cartItem">
-      <div class="col-lg-3 col-md-2 col-sm-2 col-3">
+      <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+        <h5>
+          1 <span><li class="fas fa-right"></li></span>
+        </h5>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-2">
         <div class="img">
           <img
             src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71HN4P-pd5L._AC_UY218_.jpg"
@@ -11,21 +16,21 @@
           />
         </div>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-3">
         <h5 class="model">model</h5>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-4 col-5">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-5">
         <div class="quantity">
           <i class="fas fa-circle-minus"></i>
           <span>5</span>
           <i class="fas fa-circle-plus"></i>
         </div>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-6">
+      <div class="col-lg-2 col-md-2 col-sm-11 col-10">
         <h5 class="price"><span>$</span>price</h5>
       </div>
 
-      <div class="trash col-lg-2 col-md-2 col-sm-2 col-12">
+      <div class="trash col-lg-2 col-md-2 col-sm-1 col-2">
         <i class="fas fa-trash"></i>
       </div>
     </div>
@@ -110,8 +115,8 @@
               </div>
               <button class="btn-block btn-blue">
                 <span>
-                  <span id="checkout">Checkout</span>
-                  <span id="check-amt">$26.48</span>
+                  <span id="checkout">Checkout </span>
+                  <span id="check-amt"> $26.48</span>
                 </span>
               </button>
             </div>
@@ -125,7 +130,38 @@
 <script>
 import TheFooter from "../components/Layouts/TheFooter.vue";
 import TheHeader from "../components/Layouts/TheHeader.vue";
-export default { components: { TheFooter, TheHeader } };
+export default {
+  data() {
+    return {
+      resultCartItem: [],
+    };
+  },
+  components: { TheFooter, TheHeader },
+
+  mounted() {
+    fetch(
+      "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json"
+    )
+      .then((Response) => {
+        if (Response.ok) {
+          return Response.json();
+        }
+      })
+      .then((data) => {
+        const results = [];
+        for (const id in data) {
+          results.push({
+            id: id,
+            phoneImg: data[id].img,
+            phoneModel: data[id].model,
+            phonePrice: data[id].price,
+          });
+        }
+        this.itemCart = results;
+        this.cartNumber = results.length;
+      });
+  },
+};
 </script>
   
 <style scoped>
@@ -219,15 +255,6 @@ button:focus {
   margin: 10px 20px 10px 0px;
   cursor: pointer;
   box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2);
-}
-
-.gray {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  filter: grayscale(100%);
-  color: #e0e0e0;
 }
 
 .gray .pay {
