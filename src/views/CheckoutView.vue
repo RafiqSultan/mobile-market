@@ -3,25 +3,29 @@
   <div class="container checkout px-4 py-5 mx-auto">
     <!-- Cart Order Buy -->
     <div class="row cartItem">
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-2 col-sm-2 col-3">
         <div class="img">
-          <img src="" alt="" />
+          <img
+            src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71HN4P-pd5L._AC_UY218_.jpg"
+            alt=""
+          />
         </div>
       </div>
-      <div class="col-lg-2">
-        <h5>model</h5>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+        <h5 class="model">model</h5>
       </div>
-      <div class="col-lg-2">
-        <h5>price</h5>
-      </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-4 col-sm-4 col-5">
         <div class="quantity">
           <i class="fas fa-circle-minus"></i>
           <span>5</span>
           <i class="fas fa-circle-plus"></i>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-6">
+        <h5 class="price"><span>$</span>price</h5>
+      </div>
+
+      <div class="trash col-lg-2 col-md-2 col-sm-2 col-12">
         <i class="fas fa-trash"></i>
       </div>
     </div>
@@ -97,11 +101,11 @@
                 <h6 class="mb-1 text-right">$23.49</h6>
               </div>
               <div class="row d-flex justify-content-between px-4">
-                <p class="mb-1 text-left">Shipping</p>
+                <p class="mb-1 text-left">discount Code</p>
                 <h6 class="mb-1 text-right">$2.99</h6>
               </div>
               <div class="row d-flex justify-content-between px-4" id="tax">
-                <p class="mb-1 text-left">Total (tax included)</p>
+                <p class="mb-1 text-left">Total Price :</p>
                 <h6 class="mb-1 text-right">$26.48</h6>
               </div>
               <button class="btn-block btn-blue">
@@ -128,18 +132,47 @@ export default { components: { TheFooter, TheHeader } };
 .checkout {
   margin-top: 120px;
 }
+/* Style For Cart Order */
 .cartItem {
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 0.8rem;
   background-color: #fff;
-  box-shadow: 0 0 5px #333;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 0;
+  border: none;
+  font-size: 20px;
 }
-.plus-minus {
-  position: relative;
+.img {
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+.img img {
+  height: 100%;
+}
+.quantity {
+  text-align: center;
+  font-size: 20px;
+}
+.quantity span {
+  margin: 0 20px;
+}
+.quantity .fa-circle-minus,
+.quantity .fa-circle-plus {
+  color: #311b92;
 }
 
+.price span {
+  color: #311b92;
+}
+.fa-trash {
+  color: #f00;
+}
+/* Style For Pyment Method */
 .card {
   margin: 40px 0px;
   padding: 40px 50px;
@@ -248,6 +281,11 @@ button:focus {
 
   .pad-left {
     padding-left: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .trash {
+    text-align: right;
   }
 }
 </style>
