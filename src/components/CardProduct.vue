@@ -47,6 +47,7 @@ export default {
           }),
         }
       );
+      this.$store.commit("inCart", 1);
     },
   },
 };

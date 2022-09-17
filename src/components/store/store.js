@@ -4,7 +4,7 @@ import { createStore } from 'vuex'
 // Create a new store instance.
  const store = createStore({
   state:{
-
+    cartItemNumber:[],
     phones:[
         {
             "id": 1,
@@ -175,8 +175,21 @@ import { createStore } from 'vuex'
     ],
    
     
-  }
- 
+  },
+//   End of state
+// Getter---------
+getters:{
+    // return number of cartItem
+    numberOfCart(state){
+       return state.cartItemNumber.length;
+    },
+},
+// Mutation
+mutations:{
+    inCart(state, n) { 
+        return state.cartItemNumber.push(n);
+      },
+ },
 })
 
 

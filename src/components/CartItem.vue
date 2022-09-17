@@ -2,15 +2,17 @@
   <div class="container">
     <div class="cart">
       <div class="row">
-        <div class="cartItem">
-          <div class="img">
-            <img :src="phoneImg" alt="imgcart" />
-          </div>
+        <div class="cartItem" v-for="(item, index) in cartItem" :key="item.id">
+          <template v-if="index < 3">
+            <div class="img">
+              <img :src="item.phoneImg" alt="imgcart" />
+            </div>
 
-          <div class="details">
-            <sapn>{{ phoneModel }}</sapn>
-            <span>${{ phonePrice }}</span>
-          </div>
+            <div class="details">
+              <sapn>{{ item.phoneModel }}</sapn>
+              <span>${{ item.phonePrice }}</span>
+            </div>
+          </template>
         </div>
         <!-- Btn Checkout -->
         <div class="btn_checkout">
@@ -22,7 +24,7 @@
 </template>
 <script>
 export default {
-  props: ["phoneModel", "phoneImg", "phonePrice"],
+  props: ["cartItem"],
 };
 </script>
 
@@ -36,7 +38,7 @@ export default {
   background-color: #fff;
   box-shadow: 0 0 5px #000;
   z-index: 1000;
-  padding: 0.1rem;
+  padding: 0.3rem;
   overflow: hidden !important;
   padding-bottom: 0 !important;
 }
@@ -45,9 +47,10 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  box-shadow: 0 0 2px #000;
+  box-shadow: 0 0 2px #333;
   margin: auto;
-  border: none;
+  border: none !important;
+  outline: none !important;
   margin-bottom: 5px !important;
 }
 .cartItem .img {

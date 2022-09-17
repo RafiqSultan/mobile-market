@@ -145,7 +145,9 @@
         <div class="profile_form" v-if="profileAcive === 'profile'">
           <ul class="p-2 m-0">
             <li>
-              <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+              <router-link tag="a" to="/profile"
+                ><i class="fa-solid fa-user"></i> Profile</router-link
+              >
             </li>
             <li>
               <router-link tag="a" to="/login"
@@ -156,13 +158,7 @@
         </div>
         <!-- Show Cart Item -->
         <div v-if="showCart == 'show'">
-          <CartItem
-            v-for="item in itemCart"
-            :key="item.id"
-            :phoneImg="item.phoneImg"
-            :phoneModel="item.phoneModel"
-            :phonePrice="item.phonePrice"
-          />
+          <CartItem :cartItem="itemCart" />
         </div>
       </div>
     </div>
@@ -181,9 +177,9 @@ export default {
       searchActive: null,
       cartActive: null,
       favoriteActive: null,
-      cartNumber: 0,
       itemCart: [],
       showCart: null,
+      cartNumber: 0,
     };
   },
   methods: {
@@ -200,11 +196,10 @@ export default {
       } else {
         this.searchActive = option;
       }
-      console.log(this.searchActive);
     },
     showCartItem() {
       this.showCart = "show";
-      this.cartNumber = this.itemCart.length;
+
       fetch(
         "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json"
       )
@@ -224,6 +219,7 @@ export default {
             });
           }
           this.itemCart = results;
+          this.cartNumber = results.length;
         });
     },
   },
