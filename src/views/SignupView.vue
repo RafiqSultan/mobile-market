@@ -276,6 +276,16 @@ a {
     margin: 0px 15px;
   }
 }
-/* @media (max-width: 530px) {
-  } */
+@media (max-width: 576px) {
+  .line {
+    height: 1px;
+    width: 35%;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+  }
+  .or {
+    width: 30%;
+    font-weight: bold;
+  }
+}
 </style>

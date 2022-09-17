@@ -14,7 +14,7 @@
               </p>
             </div>
             <div class="row">
-              <div class="col-md-6 col-xl-6">
+              <div class="col-xl-6 col-xl-6 col-lg-12">
                 <div class="mt-5 text-center px-3">
                   <div class="d-flex flex-row align-items-center">
                     <span class="icons"><i class="fa fa-map-marker"></i></span>
@@ -39,7 +39,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-xl-6 col-lg-12">
                 <div class="text-center px-1">
                   <div class="forms p-4 py-5 bg-white">
                     <h5>Send Message</h5>
@@ -81,6 +81,7 @@ export default {
 
 <style scoped>
 .wrapper {
+  margin-top: 50px;
   height: 100vh;
   background: #000;
   background: url("../assets/mobile-market.jpg");

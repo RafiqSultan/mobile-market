@@ -55,7 +55,7 @@
       <!-- Handfree Product  -->
       <div class="row">
         <div class="col-md-12">
-          <div class="title">
+          <div class="title handfree">
             <img
               src="../assets/handsfree.png"
               alt="samsung"

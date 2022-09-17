@@ -9,8 +9,8 @@
     "
   >
     <div class="card card0 border-0">
-      <div class="row d-flex">
-        <div class="col-lg-12 col-md-12 mx-auto">
+      <div class="row">
+        <div class="col-lg-6">
           <div class="card1 pb-5">
             <div class="row">
               <img
@@ -286,8 +286,17 @@ a {
     border-top: 1px solid #eeeeee !important;
     margin: 0px 15px;
   }
-  /* @media () {
-  
- } */
+  @media (max-width: 576px) {
+    .line {
+      height: 1px;
+      width: 35%;
+      background-color: #e0e0e0;
+      margin-top: 10px;
+    }
+    .or {
+      width: 30%;
+      font-weight: bold;
+    }
+  }
 }
 </style>

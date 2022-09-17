@@ -1,5 +1,5 @@
-<template >
-  <div class="container-fluid mt-5">
+<template>
+  <div class="footer">
     <div class="card mx-5">
       <div class="row mb-4">
         <div class="col-md-4 col-sm-11 col-xs-11">
@@ -9,9 +9,8 @@
                 class="font-weight-bold mr-2 px-3"
                 style="color: #16151a; background-color: #957bda"
               >
-                T
+                RS
               </h1>
-              <h1 style="color: #957bda">Devs</h1>
             </div>
             <p class="card-text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
@@ -19,9 +18,8 @@
             </p>
 
             <div class="social mt-2 mb-3">
-              <i class="fab fa-facebook-official"></i>
-              <i class="fab fa-instagram fa-lg"></i>
               <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram fa-lg"></i>
             </div>
           </div>
         </div>
@@ -29,19 +27,18 @@
         <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
 
         <div class="col-md-2 col-sm-4 col-xs-4">
-          <h5 class="heading">Services</h5>
+          <h5 class="heading">OS</h5>
           <ul>
-            <li>IT Consulting -</li>
-            <li>Development</li>
-            <li>Cloud</li>
-            <li>DevOps & Support</li>
+            <li>Samsung</li>
+            <li>Apple</li>
+            <li>Google</li>
           </ul>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-4">
-          <h5 class="heading">Industries</h5>
+          <h5 class="heading">Services</h5>
           <ul class="card-text">
-            <li>Finance</li>
+            <li></li>
             <li>Public Sector</li>
             <li>Smart Office</li>
             <li>Retail</li>
@@ -64,7 +61,7 @@
       <div class="row" style="font-size: 10px">
         <div class="col-md-6 col-sm-6 col-xs-6">
           <div class="pull-left">
-            <p><i class="fa fa-copyright"></i> 2020 thezpdesign</p>
+            <p><i class="fa fa-copyright"></i> 2022 by RAAS</p>
           </div>
         </div>
 
@@ -81,6 +78,12 @@
 </template>
 
 <style scoped>
+.footer {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #16151a;
+}
 .card {
   padding: 2% 7%;
   color: #646771;

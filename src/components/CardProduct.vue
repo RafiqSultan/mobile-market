@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 // *Style Card Product
 .cardProduct {
-  max-height: 330px;
+  height: 330px;
   width: 250px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 1.5px #111;
@@ -71,12 +71,11 @@ export default {
 
   //   Style img
   .img {
-    width: 50%;
-    max-height: 50%;
+    width: 60%;
+    height: 50%;
     overflow: hidden;
 
     img {
-      width: 100%;
       height: 100%;
     }
   }
