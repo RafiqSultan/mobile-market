@@ -142,13 +142,11 @@
               </div>
               <div class="row d-flex justify-content-between px-4" id="tax">
                 <p class="mb-1 text-left">Total Price :</p>
-                <h6 class="mb-1 text-right">{{ totalOfProduct }}</h6>
+                <h6 class="mb-4 text-right">{{ totalOfProduct }}</h6>
               </div>
-              <button class="btn-block btn-blue">
-                <span>
-                  <span id="checkout">Checkout </span>
-                </span>
-              </button>
+              <router-link tag="button" to="/my-order" class="btn-blue">
+                Checkout
+              </router-link>
             </div>
           </div>
         </div>
@@ -374,18 +372,14 @@ button:focus {
   border-radius: 10px;
   background-color: #673ab7;
   color: #fff;
-  padding: 8px 15px;
-  margin: 20px 0px;
+  padding: 10px 20px;
+  margin: 20px 0 0 0 !important;
   cursor: pointer;
 }
 
 .btn-blue:hover {
   background-color: #311b92;
   color: #fff;
-}
-
-#checkout {
-  float: left;
 }
 
 #check-amt {

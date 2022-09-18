@@ -43,7 +43,7 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <router-link class="nav-link" tag="a" to="/order"
+                      <router-link class="nav-link" tag="a" to="/my-order"
                         >my order</router-link
                       >
                     </li>
