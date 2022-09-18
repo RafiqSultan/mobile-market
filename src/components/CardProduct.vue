@@ -18,7 +18,7 @@
       <div class="addCard">
         <div class="detailsCard">
           <span @click="addToCart"><i class="fa fa-cart-shopping"></i></span>
-          <span><i class="fa-solid fa-heart"></i></span>
+          <span><i class="fa-solid fa-eye"></i></span>
           <span><i class="fa-solid fa-heart"></i></span>
         </div>
       </div>

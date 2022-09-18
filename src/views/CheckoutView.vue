@@ -144,7 +144,12 @@
                 <p class="mb-1 text-left">Total Price :</p>
                 <h6 class="mb-4 text-right">{{ totalOfProduct }}</h6>
               </div>
-              <router-link tag="button" to="/my-order" class="btn-blue">
+              <router-link
+                tag="button"
+                to="/my-order"
+                class="btn-blue"
+                @click="saveOrder()"
+              >
                 Checkout
               </router-link>
             </div>
@@ -195,6 +200,8 @@ export default {
       order.totalPrice = order.phoneQuantity * order.phonePrice;
       index = this.resultCartItem.findIndex((obj) => obj.id == order.id);
       this.resultCartItem[index].push(order);
+
+      console.log(typeof this.resultCartItem);
     },
     // Decrese the Quantity
     minusQuantity(order) {
@@ -213,6 +220,26 @@ export default {
         (obj) => obj.id !== order.id
       );
     },
+    // Save data order into firebase
+    saveOrder() {
+      this.resultCartItem.forEach((item) => {
+        fetch(
+          "https://mobile-market-bf248-default-rtdb.firebaseio.com/CartOrder.json",
+          {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              model: item.phoneModel,
+              img: item.phoneImg,
+              price: item.phonePrice,
+              quantity: item.phoneQuantity,
+              total: item.totalPrice,
+            }),
+          }
+        );
+      });
+    },
+
     // // Sum of Toala Price
     // totalOfProduct() {
     //   let sum = 0;
@@ -245,6 +272,7 @@ export default {
           });
         }
         this.resultCartItem = results;
+        console.log(typeof this.resultCartItem);
       });
   },
 };

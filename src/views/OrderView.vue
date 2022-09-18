@@ -24,7 +24,7 @@
     </div>
     <!-- Cart Order Buy -->
 
-    <div class="row cartItem" v-for="(item, index) in myorder" :key="item.id">
+    <div class="row cartItem" v-for="item in myorder" :key="item.id">
       <div class="col-lg-2 col-md-2 col-sm-2 col-2">
         <div class="img">
           <img :src="item.phoneImg" alt="" />
@@ -40,9 +40,6 @@
         <h5 class="price">{{ item.phoneQuantity }}</h5>
       </div>
 
-      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
-        <h5 class="price"><span>$</span>{{ item.totalPrice }}</h5>
-      </div>
       <div class="col-lg-2 col-md-2 col-sm-6 col-6">
         <h5 class="price">OK</h5>
       </div>
@@ -62,7 +59,7 @@ export default {
   },
   mounted() {
     fetch(
-      "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json"
+      "https://mobile-market-bf248-default-rtdb.firebaseio.com/CartOrder.json"
     )
       .then((Response) => {
         if (Response.ok) {
