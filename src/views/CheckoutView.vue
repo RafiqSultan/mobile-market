@@ -1,41 +1,72 @@
 <template>
   <TheHeader />
   <div class="container checkout px-4 py-5 mx-auto">
-    <!-- Cart Order Buy -->
-    <div class="row cartItem">
-      <div class="col-lg-1 col-md-1 col-sm-2 col-2">
-        <h5>
-          1 <span><li class="fas fa-right"></li></span>
-        </h5>
+    <div class="row d-flex">
+      <div class="cart">
+        <div class="head">
+          <div class="col-lg-2 col-md-2">
+            <h3>Shopping Cart</h3>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div id="price">Model</div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div id="price">Price</div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div id="quantity">Quantity</div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div id="total">Total</div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div id="total">Delete</div>
+          </div>
+        </div>
       </div>
+    </div>
+    <!-- Cart Order Buy -->
+
+    <div
+      class="row cartItem"
+      v-for="(item, index) in resultCartItem"
+      :key="item.id"
+    >
       <div class="col-lg-2 col-md-2 col-sm-2 col-2">
         <div class="img">
-          <img
-            src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71HN4P-pd5L._AC_UY218_.jpg"
-            alt=""
-          />
+          <img :src="item.phoneImg" alt="" />
         </div>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-        <h5 class="model">model</h5>
+        <h5 class="model">{{ item.phoneModel }}</h5>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-4 col-5">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+        <h5 class="price"><span>$</span>{{ item.phonePrice }}</h5>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-5 col-5">
         <div class="quantity">
-          <i class="fas fa-circle-minus"></i>
-          <span>5</span>
-          <i class="fas fa-circle-plus"></i>
+          <div @click="minusQuantity(item)">
+            <i class="fas fa-circle-minus"></i>
+          </div>
+          <span>{{ item.phoneQuantity }}</span>
+          <div @click="plusQuantity(item)">
+            <i class="fas fa-circle-plus"></i>
+          </div>
         </div>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-11 col-10">
-        <h5 class="price"><span>$</span>price</h5>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+        <h5 class="price"><span>$</span>{{ item.totalPrice }}</h5>
       </div>
-
-      <div class="trash col-lg-2 col-md-2 col-sm-1 col-2">
+      <div
+        class="trash col-lg-2 col-md-2 col-sm-6 col-6"
+        title="delete"
+        @click="removeCart(item)"
+      >
         <i class="fas fa-trash"></i>
       </div>
-    </div>
-    <!-- Pyment Method -->
 
+      <!-- Pyment Method -->
+    </div>
     <div class="row justify-content-center">
       <div class="col-lg-12">
         <div class="card">
@@ -103,20 +134,19 @@
             <div class="col-lg-4 mt-2">
               <div class="row d-flex justify-content-between px-4">
                 <p class="mb-1 text-left">Subtotal</p>
-                <h6 class="mb-1 text-right">$23.49</h6>
+                <h6 class="mb-1 text-right">{{ totalOfProduct }}</h6>
               </div>
               <div class="row d-flex justify-content-between px-4">
                 <p class="mb-1 text-left">discount Code</p>
-                <h6 class="mb-1 text-right">$2.99</h6>
+                <h6 class="mb-1 text-right">$0.00</h6>
               </div>
               <div class="row d-flex justify-content-between px-4" id="tax">
                 <p class="mb-1 text-left">Total Price :</p>
-                <h6 class="mb-1 text-right">$26.48</h6>
+                <h6 class="mb-1 text-right">{{ totalOfProduct }}</h6>
               </div>
               <button class="btn-block btn-blue">
                 <span>
                   <span id="checkout">Checkout </span>
-                  <span id="check-amt"> $26.48</span>
                 </span>
               </button>
             </div>
@@ -137,6 +167,63 @@ export default {
     };
   },
   components: { TheFooter, TheHeader },
+  //   computed: {
+  //     numberOfQuantity(index) {
+  //       return index;
+  //     },
+  //   },
+  //   computed: {
+  //     plusQuantity(order) {
+  //       order.phoneQuantity++;
+  //       order.totalPrice = order.phoneQuantity * order.totalPrice;
+  //       index = this.resultCartItem.findIndex((obj) => obj.id == order.id);
+  //       this.resultCartItem[index].push(order);
+  //     },
+  //   },
+  computed: {
+    // Sum of Toala Price
+    totalOfProduct() {
+      let sum = 0;
+      this.resultCartItem.forEach((item) => {
+        sum += item.totalPrice;
+      });
+      return sum;
+    },
+  },
+  methods: {
+    // Increse the Quantity
+    plusQuantity(order) {
+      order.phoneQuantity++;
+      order.totalPrice = order.phoneQuantity * order.phonePrice;
+      index = this.resultCartItem.findIndex((obj) => obj.id == order.id);
+      this.resultCartItem[index].push(order);
+    },
+    // Decrese the Quantity
+    minusQuantity(order) {
+      if (order.phoneQuantity <= 1) {
+        order.phoneQuantity = 1;
+      } else {
+        order.phoneQuantity--;
+      }
+      order.totalPrice = order.phoneQuantity * order.phonePrice;
+      index = this.resultCartItem.findIndex((obj) => obj.id == order.id);
+      this.resultCartItem[index].push(order);
+    },
+    // Remove item from Cart
+    removeCart(order) {
+      this.resultCartItem = this.resultCartItem.filter(
+        (obj) => obj.id !== order.id
+      );
+    },
+    // // Sum of Toala Price
+    // totalOfProduct() {
+    //   let sum = 0;
+    //   this.resultCartItem.forEach((item) => {
+    //     sum += item.totalPrice;
+    //   });
+    //   return sum;
+    // },
+  },
 
   mounted() {
     fetch(
@@ -155,10 +242,11 @@ export default {
             phoneImg: data[id].img,
             phoneModel: data[id].model,
             phonePrice: data[id].price,
+            phoneQuantity: data[id].quantity,
+            totalPrice: data[id].total,
           });
         }
-        this.itemCart = results;
-        this.cartNumber = results.length;
+        this.resultCartItem = results;
       });
   },
 };
@@ -168,6 +256,14 @@ export default {
 .checkout {
   margin-top: 120px;
 }
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  padding: 0.8rem;
+  border-bottom: 1px solid #f00;
+  text-align: center;
+}
 /* Style For Cart Order */
 .cartItem {
   width: 100%;
@@ -176,11 +272,13 @@ export default {
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center !important;
   border-radius: 10px;
-  margin: 0;
+  margin: 0.8rem 0;
   border: none;
+  text-align: center;
   font-size: 20px;
+  overflow: hidden;
 }
 .img {
   height: 50px;
@@ -191,15 +289,18 @@ export default {
   height: 100%;
 }
 .quantity {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
 }
 .quantity span {
-  margin: 0 20px;
+  margin: 0 10px;
 }
 .quantity .fa-circle-minus,
 .quantity .fa-circle-plus {
   color: #311b92;
+  cursor: pointer;
 }
 
 .price span {
@@ -207,6 +308,7 @@ export default {
 }
 .fa-trash {
   color: #f00;
+  cursor: pointer;
 }
 /* Style For Pyment Method */
 .card {

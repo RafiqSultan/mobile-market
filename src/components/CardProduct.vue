@@ -44,6 +44,8 @@ export default {
             model: this.phoneTitle,
             img: this.phoneImg,
             price: this.phonePrice,
+            quantity: 1,
+            total: this.phonePrice,
           }),
         }
       );
