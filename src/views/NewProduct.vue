@@ -23,6 +23,30 @@
         </div>
         <!-- Carsouel Card -->
         <MyCarousel ContentOfCarousel="discount" />
+        <!-- Tital -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="title">
+              <span class="highlight"><b>New</b></span> Products
+            </h2>
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="row">
+          <div class="col-lg-12 show1">
+            <img src="../assets/show/show1.webp" alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 show2">
+            <img src="../assets/show/bannershow.webp" alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 show3">
+            <img src="../assets/show/show2.webp" alt="" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -293,6 +317,37 @@ h2::after {
 }
 .refurbished .highlight {
   color: var(--yellow);
+}
+.show1,
+.show3,
+.show2 {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  text-align: right;
+}
+.show2 {
+  text-align: left !important;
+  margin: 1rem 0;
+}
+.show3 {
+  text-align: right !important;
+  margin: 1rem 0;
+}
+.show1 img {
+  width: 65%;
+  height: 100%;
+  border-radius: 20px !important;
+}
+.show2 img {
+  width: 65%;
+  height: 100%;
+  border-radius: 20px !important;
+}
+.show3 img {
+  width: 70%;
+  height: 100%;
+  border-radius: 20px !important;
 }
 
 @media screen and (max-width: 1000px) {

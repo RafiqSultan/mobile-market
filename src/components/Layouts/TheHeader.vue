@@ -9,7 +9,7 @@
             <img
               src="../../assets/mobile-logo1-removebg-preview.png"
               alt="logo"
-              width="70"
+              width="80"
               height="50"
           /></a>
         </div>
@@ -255,6 +255,9 @@ export default {
   color: #f00 !important;
 }
 
+.sec-navbar .navbar-brand img {
+  transform: scale(1.3) !important;
+}
 .sec-navbar .user-setting {
   display: inline-flex;
   color: #000 !important;
