@@ -13,11 +13,10 @@
               </h1>
             </div>
             <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-              non pariatur numquam animi nam at impedit odit nisi.
+              Specialized in all digital mobiles and accessories.
             </p>
 
-            <div class="social mt-2 mb-3">
+            <div class="social">
               <i class="fab fa-facebook"></i>
               <i class="fab fa-instagram fa-lg"></i>
             </div>
@@ -39,9 +38,10 @@
           <h5 class="heading">Services</h5>
           <ul class="card-text">
             <li></li>
-            <li>Public Sector</li>
-            <li>Smart Office</li>
-            <li>Retail</li>
+            <li>Programming</li>
+            <li>Maintenance</li>
+            <li>Buying</li>
+            <li>Selling</li>
           </ul>
         </div>
 
@@ -109,9 +109,10 @@ hr {
   border-width: 3px;
 }
 
-.social > i {
-  padding: 1%;
-  font-size: 15px;
+.social .fa-facebook,
+.social .fa-instagram {
+  font-size: 30px !important;
+  margin: auto 3px;
 }
 
 .social > i:hover {
