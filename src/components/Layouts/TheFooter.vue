@@ -81,7 +81,7 @@
 .footer {
   width: 100% !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 1rem 0 0 !important;
   background-color: #16151a;
 }
 .card {

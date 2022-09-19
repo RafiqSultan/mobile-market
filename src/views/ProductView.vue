@@ -3,8 +3,8 @@
   <div class="container">
     <!-- Samsung Product -->
     <div class="row">
-      <div class="col-md-12">
-        <div class="title">
+      <div class="title">
+        <div class="img">
           <img
             src="../assets/samsung-logo.png"
             alt="samsung"
@@ -12,83 +12,94 @@
             height="120"
           />
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="samsungCard">
-            <CardProduct
-              v-for="phone in samsung"
-              :key="phone.id"
-              :phoneTitle="phone.model"
-              :phonePrice="phone.price"
-              :phoneImg="phone.image"
-            />
-          </div>
+        <div class="showAll">
+          <a href=""> Show more</a>
         </div>
       </div>
-      <!-- Apple Product -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title">
-            <img
-              src="../assets/apple_logo.png"
-              alt="samsung"
-              width="350"
-              height="120"
-            />
-          </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="samsungCard">
+          <CardProduct
+            v-for="phone in samsung"
+            :key="phone.id"
+            :phoneTitle="phone.model"
+            :phonePrice="phone.price"
+            :phoneImg="phone.image"
+          />
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="appleCard">
-            <CardProduct
-              v-for="phone in apple"
-              :key="phone.id"
-              :phoneTitle="phone.model"
-              :phonePrice="phone.price"
-              :phoneImg="phone.image"
-            />
-          </div>
+    </div>
+    <!-- Apple Product -->
+    <div class="row">
+      <div class="title">
+        <div class="img">
+          <img
+            src="../assets/apple_logo.png"
+            alt="samsung"
+            width="350"
+            height="120"
+          />
+        </div>
+        <div class="showAll">
+          <a href=""> Show more</a>
         </div>
       </div>
-      <!-- Handfree Product  -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title handfree">
-            <img
-              src="../assets/handsfree.png"
-              alt="samsung"
-              width="200"
-              height="120"
-            />
-            <h5>HandsFree</h5>
-          </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="appleCard">
+          <CardProduct
+            v-for="phone in apple"
+            :key="phone.id"
+            :phoneTitle="phone.model"
+            :phonePrice="phone.price"
+            :phoneImg="phone.image"
+          />
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="appleCard">
-            <CardProduct
-              v-for="handfree in handsfree"
-              :key="handfree.id"
-              :phoneTitle="handfree.model"
-              :phonePrice="handfree.price"
-              :phoneImg="handfree.image"
-            />
-          </div>
+    </div>
+    <!-- Handfree Product  -->
+    <div class="row">
+      <div class="title">
+        <div class="img handfree">
+          <img
+            src="../assets/handsfree.png"
+            alt="samsung"
+            width="200"
+            height="120"
+          />
+          <h5 class="handfree">HandsFree</h5>
+        </div>
+        <div class="showAll">
+          <a href=""> Show more</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="appleCard">
+          <CardProduct
+            v-for="handfree in handsfree"
+            :key="handfree.id"
+            :phoneTitle="handfree.model"
+            :phonePrice="handfree.price"
+            :phoneImg="handfree.image"
+          />
         </div>
       </div>
     </div>
   </div>
+
+  <TheFooter />
 </template>
 
 <script>
-import { computed } from "@vue/runtime-core";
 import TheHeader from "../components/Layouts/TheHeader.vue";
 import CardProduct from "../components/CardProduct.vue";
+import TheFooter from "../components/Layouts/TheFooter.vue";
 export default {
-  components: { TheHeader, CardProduct },
+  components: { TheHeader, CardProduct, TheFooter },
   computed: {
     samsung() {
       return this.$store.state.samsung;
@@ -105,19 +116,35 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+  display: flex !important;
+  text-align: center !important;
+  justify-content: space-evenly !important;
   margin-top: 6rem;
   text-align: center;
   margin-bottom: 2rem;
+  background: #ddd;
+  height: 90px;
+  overflow: hidden;
 
-  h5 {
-    width: 150px;
-    font-size: 3rem;
-    font-weight: bold;
-    padding: 1rem 0;
-    margin: auto 0;
+  .img {
+    text-align: center;
+    display: flex;
+    img {
+      height: 100%;
+    }
+    .handfree {
+      color: #000;
+      z-index: 100;
+      margin: auto;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  }
+  .showAll {
+    background: #ccc;
+    margin: auto;
+    margin-right: 5%;
+    padding: 0.3rem;
   }
 }
 .samsungCard,
