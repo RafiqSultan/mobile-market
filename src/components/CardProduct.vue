@@ -11,7 +11,12 @@
           <i class="fa-solid fa-star-half-stroke"></i>
         </div>
         <p>
-          $<span id="price">{{ phonePrice }}</span>
+          <span
+            id="price"
+            v-if="disc > 0 ? 'discountPrice(phonePrice, disc)' : ''"
+            >{{
+          }}</span>
+          <span id="">${{ phonePrice }}</span>
         </p>
       </div>
 
@@ -19,7 +24,7 @@
         <div class="detailsCard">
           <span @click="addToCart"><i class="fa fa-cart-shopping"></i></span>
           <span><i class="fa-solid fa-eye"></i></span>
-          <span><i class="fa-solid fa-heart"></i></span>
+          <span @click="addToFav"><i class="fa-solid fa-heart"></i></span>
         </div>
       </div>
     </div>
@@ -29,9 +34,14 @@
 <!-- Script js data -->
 <script>
 export default {
-  props: ["phoneTitle", "phoneImg", "phonePrice"],
+  props: ["phoneTitle", "phoneImg", "phonePrice", "disc"],
   data() {
     return {};
+  },
+  methods: {
+    dicountPrice(price, discount) {
+      return "$" + price - price * (discount / 100);
+    },
   },
   computed: {
     addToCart() {
@@ -50,6 +60,23 @@ export default {
         }
       );
       this.$store.commit("inCart", 1);
+    },
+    // Add to Favorite menu
+    addToFav() {
+      fetch(
+        "https://mobile-market-bf248-default-rtdb.firebaseio.com/CartFav.json",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            model: this.phoneTitle,
+            img: this.phoneImg,
+            price: this.phonePrice,
+            quantity: 1,
+            total: this.phonePrice,
+          }),
+        }
+      );
     },
   },
 };

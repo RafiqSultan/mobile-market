@@ -73,13 +73,19 @@
                   ></i>
                 </div>
                 <!-- favorite -->
-                <div class="icons search-icon" id="search-btn" title="Favorite">
+                <router-link
+                  tag="div"
+                  to="/favorite"
+                  class="icons search-icon"
+                  id="search-btn"
+                  title="Favorite"
+                >
                   <i
                     class="fa-solid fa-heart"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                   ></i>
-                </div>
+                </router-link>
                 <!-- Cart  -->
                 <div
                   class="icons search-icon"

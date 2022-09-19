@@ -29,13 +29,6 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="landing">
-          <div class="land-img">
-            <img
-              class="image"
-              src="https://www.apple.com/v/ipad-pro/ai/images/overview/thunderbolt/thunderbolt_hero__fg7vx8fb8ve6_large_2x.jpg"
-              alt=""
-            />
-          </div>
           <div class="land-msg">
             <div class="upper-msg">
               <img src="@/assets/img/brands/apple.svg" alt="" class="logo" />
@@ -159,8 +152,8 @@ export default {};
 .landing {
   display: flex;
   background-color: #111;
-  border-radius: 2rem;
-  margin: 1rem;
+  border-radius: 1rem;
+  margin: 4.1rem 0 2rem 0;
   height: 400px;
   padding: 1rem 3rem;
 }
@@ -239,7 +232,7 @@ a:hover {
   margin: 1rem;
 }
 .land-img {
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

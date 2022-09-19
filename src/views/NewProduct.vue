@@ -2,75 +2,27 @@
   <section class="product-line">
     <div class="discounted">
       <div class="container">
+        <!-- Tital -->
         <div class="row">
           <div class="col-md-12">
             <h2 class="title">
               <span class="highlight"><b>New</b></span> Products
             </h2>
-            <div
-              id="trendingCarousel"
-              class="carousel carousel-dark slide"
-              data-bs-ride="carousel"
-              data-interval="0"
-            >
-              <!-- Carousel indicators -->
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#trendingCarousel"
-                  data-bs-slide-to="0"
-                  class="active"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#trendingCarousel"
-                  data-bs-slide-to="1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#trendingCarousel"
-                  data-bs-slide-to="2"
-                ></button>
-              </div>
-
-              <!-- Wrapper for carousel items -->
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div
-                      class="col-sm-3"
-                      v-for="phone in newProduct"
-                      :key="phone.id"
-                    >
-                      <CardProduct
-                        :phoneTitle="phone.model"
-                        :phonePrice="phone.price"
-                        :phoneImg="phone.image"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Carousel controls -->
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#trendingCarousel"
-                data-bs-slide="prev"
-              >
-                <span class="carousel-control-prev-icon"></span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#trendingCarousel"
-                data-bs-slide="next"
-              >
-                <span class="carousel-control-next-icon"></span>
-              </button>
-            </div>
           </div>
         </div>
+        <!-- Carsouel Card -->
+        <MyCarousel ContentOfCarousel="newProduct" />
+
+        <!-- Tital Discount -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="title">
+              <span class="highlight"><b>Discount</b></span> Products
+            </h2>
+          </div>
+        </div>
+        <!-- Carsouel Card -->
+        <MyCarousel ContentOfCarousel="discount" />
       </div>
     </div>
   </section>
@@ -78,10 +30,12 @@
 
 <script>
 import CardProduct from "../components/CardProduct.vue";
+import MyCarousel from "../components/MyCarousel.vue";
 
 export default {
   components: {
     CardProduct,
+    MyCarousel,
   },
   computed: {
     newProduct() {

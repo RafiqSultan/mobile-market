@@ -8,6 +8,7 @@ import ContactView from '../views/ContactView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import CheckoutView from '../views/CheckoutView.vue'
 import OrderView from '../views/OrderView.vue'
+import FavoriteView from '../views/FavoriteView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -50,6 +51,11 @@ const router = createRouter({
       path: '/my-order',
       name: 'myorder',
       component:OrderView
+    },
+    {
+      path: '/favorite',
+      name: 'favorite',
+      component:FavoriteView
     },
     {
       path: '/about',
