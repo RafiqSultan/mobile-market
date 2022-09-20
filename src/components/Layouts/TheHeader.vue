@@ -35,20 +35,32 @@
                 >
                   <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                      <router-link class="nav-link" to="/">Home</router-link>
+                      <router-link
+                        class="nav-link hvr-underline-from-center"
+                        to="/"
+                        >Home</router-link
+                      >
                     </li>
                     <li class="nav-item">
-                      <router-link class="nav-link" to="/products"
+                      <router-link
+                        class="nav-link hvr-underline-from-center"
+                        to="/products"
                         >Product</router-link
                       >
                     </li>
                     <li class="nav-item">
-                      <router-link class="nav-link" tag="a" to="/my-order"
+                      <router-link
+                        class="nav-link hvr-underline-from-center"
+                        tag="a"
+                        to="/my-order"
                         >my order</router-link
                       >
                     </li>
                     <li class="nav-item">
-                      <router-link tag="a" class="nav-link" to="/contact"
+                      <router-link
+                        tag="a"
+                        class="nav-link hvr-underline-from-center"
+                        to="/contact"
                         >Contact US</router-link
                       >
                     </li>
@@ -81,7 +93,7 @@
                   title="Favorite"
                 >
                   <i
-                    class="fa-solid fa-heart"
+                    class="far fa-heart"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                   ></i>
@@ -93,7 +105,7 @@
                   @click="showCartItem"
                 >
                   <i
-                    class="fa fa-cart-shopping"
+                    class="fas fa-cart-shopping"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Cart"
@@ -117,7 +129,7 @@
                   @click="profile('profile')"
                 >
                   <i
-                    class="fa-solid fa-user"
+                    class="fa-solid fa-circle-user"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
                     title="Profile"
@@ -163,7 +175,7 @@
           </ul>
         </div>
         <!-- Show Cart Item -->
-        <div v-if="showCart == 'show'">
+        <div v-if="showCart == 'show' && this.itemCart.length > 0">
           <CartItem :cartItem="itemCart" />
         </div>
       </div>
@@ -243,16 +255,17 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #fff;
-  box-shadow: 0 0 3px #111;
+  background-color: var(--back-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
 }
 
 .sec-navbar .nav-item a {
-  color: inherit;
+  color: #000;
+  font-weight: 500;
 }
 
 .sec-navbar .nav-item a:hover {
-  color: #f00 !important;
+  color: #444 !important;
 }
 
 .sec-navbar .navbar-brand img {
@@ -274,16 +287,21 @@ export default {
   text-align: center;
   padding: 10px;
   margin: 5px;
-  background-color: #00293c;
-  color: #fff;
-  width: 50xp;
-  height: 40px;
-  border-radius: 20%;
+  font-size: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   opacity: 0.9;
+}
+.user-setting .icons .fa-heart {
+  color: #000 !important;
+}
+.sec-navbar .user-setting .icons .fa-circle-user:hover,
+.sec-navbar .user-setting .icons .fa-cart-shopping:hover,
+.sec-navbar .user-setting .icons .fa-search:hover,
+.sec-navbar .user-setting .icons .fa-heart:hover {
+  color: var(--red-color) !important;
 }
 .sec-navbar .user-setting .icons .cart {
   content: "";

@@ -7,7 +7,11 @@
             <div class="d-flex">
               <h1
                 class="font-weight-bold mr-2 px-3"
-                style="color: #16151a; background-color: #957bda"
+                style="
+                  color: #ed0370;
+                  background-color: #5bafe5;
+                  border-radius: 15px;
+                "
               >
                 RS
               </h1>
@@ -88,12 +92,14 @@
   padding: 2% 7%;
   color: #646771;
   background-color: #16151a;
+  text-align: center;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 ul > li {
@@ -101,7 +107,7 @@ ul > li {
 }
 
 ul > li:hover {
-  color: #957bda;
+  color: var(--blue-color);
   cursor: pointer;
 }
 
@@ -113,11 +119,11 @@ hr {
 .social .fa-instagram {
   font-size: 30px !important;
   margin: auto 3px;
-}
-
-.social > i:hover {
-  color: #957bda;
   cursor: pointer;
+}
+.social .fa-facebook:hover,
+.social .fa-instagram:hover {
+  color: var(--blue-color);
 }
 
 .policy > div {

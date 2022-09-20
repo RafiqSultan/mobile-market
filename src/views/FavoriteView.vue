@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <div class="container">
+  <div class="container" v-if="this.myFavorite.length > 0">
     <div class="favCart">
       <div class="cardProduct" v-for="item in myFavorite">
         <div class="img">
@@ -27,6 +27,18 @@
           ><i class="fas fa-xmark"></i
         ></span>
       </div>
+    </div>
+  </div>
+  <!-- IF No Fav Item -->
+  <div
+    class="container"
+    v-if="this.myFavorite.length <= 0"
+    :class="{ noItem: myFavorite.length == 0 }"
+  >
+    <div class="noorder">
+      <img src="../assets/cart.webp" alt="no order" />
+      <h1>No Item Now</h1>
+      <router-link tag="a" to="/product">Shop Now</router-link>
     </div>
   </div>
   <TheFooter />
@@ -76,6 +88,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.noItem {
+  margin-top: 58vh !important ;
+}
+.noorder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 500px;
+  margin-top: -69vh !important;
+}
+.noorder img {
+  width: 200px;
+  height: 200px;
+}
+.noorder a {
+  background-color: #f00;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
 // *Style Card Product
 .favCart {
   margin-top: 120px;

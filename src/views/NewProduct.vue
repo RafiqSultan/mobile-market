@@ -32,18 +32,30 @@
           </div>
         </div>
         <!-- Content -->
-        <div class="row">
-          <div class="col-lg-12 show1">
+        <div
+          class="row"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
+          <div class="col-lg-12 show1" data-aos="fade-left">
             <img src="../assets/show/show1.webp" alt="" />
           </div>
         </div>
-        <div class="row">
+        <div
+          class="row"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
+          >
           <div class="col-lg-12 show2">
             <img src="../assets/show/bannershow.webp" alt="" />
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12 show3">
+          <div class="col-lg-12 show3" data-aos="fade-left">
             <img src="../assets/show/show2.webp" alt="" />
           </div>
         </div>
@@ -96,23 +108,25 @@ export default {
 }
 h2 {
   color: #000;
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 500;
   text-align: center;
   text-transform: uppercase;
   position: relative;
   margin: 1rem;
 }
 .discounted .highlight {
-  color: var(--blue);
+  color: var(--blue-color);
+  font-size: 2rem;
+  font-weight: bold;
 }
 h2::after {
   content: "";
   width: 100px;
   position: absolute;
   margin: 0 auto;
-  height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  height: 3px;
+  background: var(--red-color);
   left: 0;
   right: 0;
   bottom: -20px;
@@ -325,6 +339,7 @@ h2::after {
   height: 400px;
   overflow: hidden;
   text-align: right;
+  transition-delay: 1s;
 }
 .show2 {
   text-align: left !important;

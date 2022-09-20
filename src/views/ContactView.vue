@@ -1,175 +1,191 @@
 <template>
   <TheHeader />
-  <div class="wrapper">
-    <div class="overlay">
-      <div class="container">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-md-9">
-            <div class="contact-us text-center">
-              <h1>Contact Us</h1>
-              <p class="mb-5">
-                Lorem ipsum is placeholder text commonly used in the graphic,
-                print, and publishing industries for previewing layouts and
-                visual mockups.
-              </p>
+  <div class="container">
+    <!-- contact section start -------------------------------------->
+    <div class="contact" id="contact">
+      <h1 class="section-title"><span>contact</span> us</h1>
+      <p class="about">
+        A company specialized in supplying all kinds of mobile phones with all
+        their accessories Marketing it through software or websites
+      </p>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+          <div class="contact-info">
+            <div class="contact-info-item col-12">
+              <i class="fas fa-location-arrow"></i>
+              <h4>Compant Location</h4>
+              <p>199 xyz Yemen</p>
             </div>
-            <div class="row">
-              <div class="col-xl-6 col-xl-6 col-lg-12">
-                <div class="mt-5 text-center px-3">
-                  <div class="d-flex flex-row align-items-center">
-                    <span class="icons"><i class="fa fa-map-marker"></i></span>
-                    <div class="address text-left">
-                      <span>Address</span>
-                      <p>461, Sugar camp, San jose, California, USA</p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row align-items-center mt-3">
-                    <span class="icons"><i class="fa fa-phone"></i></span>
-                    <div class="address text-left">
-                      <span>Phone</span>
-                      <p>+1 243 333 2424</p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row align-items-center mt-3">
-                    <span class="icons"><i class="fas fa-envelope"></i></span>
-                    <div class="address text-left">
-                      <span>Email</span>
-                      <p>email@bbbootstrap.com</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-12">
-                <div class="text-center px-1">
-                  <div class="forms p-4 py-5 bg-white">
-                    <h5>Send Message</h5>
-                    <div class="mt-4 inputs">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Name"
-                      />
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Email"
-                      />
-                      <textarea
-                        class="form-control"
-                        placeholder="Type your message"
-                      ></textarea>
-                    </div>
-                    <div class="button mt-4 text-left">
-                      <button class="btn btn-dark">Send</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="contact-info-item col-12">
+              <i class="fas fa-envelope"></i>
+              <h4>Write to us at</h4>
+              <p>info@gmail.com</p>
+            </div>
+            <div class="contact-info-item col-12">
+              <i class="fas fa-phone"></i>
+              <h4>Call us on</h4>
+              <p>(+967)777350652</p>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1629452077891!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+
+        <form action="">
+          <h3>get in touch</h3>
+          <div class="inputBox">
+            <span class="fas fa-user"></span>
+            <input type="text" placeholder="name" />
+          </div>
+          <div class="inputBox">
+            <span class="fas fa-envelope"></span>
+            <input type="email" placeholder="email" />
+          </div>
+          <div class="inputBox">
+            <span class="fas fa-phone"></span>
+            <input type="number" placeholder="number" />
+          </div>
+
+          <input type="submit" value="contact now" class="buzz" />
+        </form>
+      </div>
     </div>
+    <!-- contact section end -->
   </div>
+  <TheFooter />
 </template>
 <script>
 import TheHeader from "../components/Layouts/TheHeader.vue";
+import TheFooter from "../components/Layouts/TheFooter.vue";
 export default {
-  components: { TheHeader },
+  components: { TheHeader, TheFooter },
 };
 </script>
 
 <style scoped>
-.wrapper {
-  margin-top: 50px;
-  height: 100vh;
-  background: #000;
-  background: url("../assets/mobile-market.jpg");
-  background-size: cover;
-  width: 100%;
-}
+/* start section  contact ***********************************************/
 
-.overlay {
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+.section-title {
+  color: #000;
+  text-align: center;
 }
-
-.contact-us {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: #fff;
-}
-
-.contact-us h3,
-p {
-  color: #fff;
-}
-
-.address {
-  margin-top: 14px !important;
-  margin-left: 10px;
-}
-
-.address span {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-  display: flex;
-}
-.address p {
-  display: flex !important;
-}
-
-.icons {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-  display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icons i {
+.about {
+  text-align: center;
   font-size: 20px;
 }
-
-.forms {
-  padding: 20px;
+#contact {
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
-
-.inputs input {
-  margin-bottom: 13px;
-  border: none;
-  border-bottom: 2px solid #eee;
+.contact .row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
-
-.inputs input:focus {
-  margin-bottom: 13px;
-  border: none;
-  border-bottom: 2px solid #7b1fa2;
-  box-shadow: none;
+@media (max-width: 780px) {
+  .contact .row {
+    display: block !important;
+  }
 }
-
-.inputs textarea {
-  margin-bottom: 13px;
-  border: none;
-  border-bottom: 2px solid #eee;
+.contact .row .map {
+  flex: 1 1 45rem;
   width: 100%;
-  resize: none;
+  object-fit: cover;
+  height: 400px;
 }
 
-.inputs textarea:focus {
-  margin-bottom: 13px;
+.contact .row form {
+  flex: 1 1 45rem;
+  text-align: center;
+}
+
+.contact .row form h3 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: rgb(177, 143, 143);
+  border-radius: 1rem;
+}
+
+.contact .row form .inputBox .fa-user,
+.contact .row form .inputBox .fa-envelope,
+.contact .row form .inputBox .fa-phone {
+  color: rgb(173, 19, 19);
+  font-size: 1.2rem;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.contact .row form .inputBox input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 24;
+  color: #fff;
+  text-transform: none;
+  background: none;
   border: none;
-  border-bottom: 2px solid #7b1fa2;
-  box-shadow: none;
-  resize: none;
+}
+.btn {
+  background-color: #000;
+  padding: 10px;
+  color: #fff;
+}
+.contact-info {
+  width: 100% !important;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.contact-info-item {
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 30px;
+  display: block;
+}
+@media (max-width: 576px) {
+  .contact-info {
+    display: block;
+  }
+}
+.contact-info-item .fa-phone,
+.contact-info-item .fa-envelope,
+.contact-info-item .fa-location-arrow {
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 10px;
+  color: #00f;
+  border: 1px solid #00f;
+  text-align: center;
+  line-height: 38px;
 }
 
-.form-control {
-  padding: 0.375rem 0.25rem;
+.contact-info-item h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: var(--black-900);
 }
+
+.contact-info-item p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  line-height: 26px;
+  color: var(--black-400);
+}
+/* End section contact */
 </style>

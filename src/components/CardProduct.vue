@@ -22,9 +22,13 @@
 
       <div class="addCard">
         <div class="detailsCard">
-          <span @click="addToCart"><i class="fa fa-cart-shopping"></i></span>
-          <span><i class="fa-solid fa-eye"></i></span>
-          <span @click="addToFav"><i class="fa-solid fa-heart"></i></span>
+          <span class="hvr-rectangle-in" @click="addToCart"
+            ><i class="fa fa-cart-shopping"></i
+          ></span>
+          <span class="hvr-rectangle-in"><i class="fa-solid fa-eye"></i></span>
+          <span class="hvr-rectangle-in" @click="addToFav"
+            ><i class="fa-solid fa-heart"></i
+          ></span>
         </div>
       </div>
     </div>
@@ -88,9 +92,9 @@ export default {
   height: 330px;
   width: 250px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 1.5px #111;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 10px;
-  padding: 10px !important;
+  padding: 5px !important;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -98,14 +102,16 @@ export default {
   flex-direction: column;
   text-align: center;
   overflow: hidden;
+  margin: 10px 0;
 
   //   Style img
   .img {
-    width: 60%;
+    max-width: 80%;
     height: 50%;
     overflow: hidden;
 
     img {
+      max-width: 100%;
       height: 100%;
     }
   }
@@ -118,10 +124,16 @@ export default {
   padding: 0 0.5rem;
   h5 {
     font-weight: 500;
+    width: 100%;
+    height: 40px;
     margin: 0 !important;
+    color: #000;
+    // font-size: 19px;
+    line-height: 22px;
+    overflow: hidden !important;
   }
   p {
-    color: #5943b5;
+    color: var(--blue-color);
     margin: auto;
     font-size: 22px;
     font-weight: 500;
@@ -152,13 +164,19 @@ export default {
       height: 40px;
       width: 40px;
       border-radius: 50%;
-      background-color: #97d2ec;
+      background-color: var(--blue-color);
       display: flex;
+      color: var(--red-color);
       justify-content: center;
       align-items: center;
+      font-size: 18px;
+
       .fa-heart {
-        font-size: 23px;
+        font-size: 20px;
       }
+    }
+    span:hover {
+      color: var(--back-color);
     }
   }
 }

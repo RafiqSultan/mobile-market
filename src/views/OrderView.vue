@@ -1,6 +1,9 @@
 <template>
   <TheHeader />
-  <div class="container checkout px-4 py-5 mx-auto">
+  <div
+    class="container checkout px-4 py-5 mx-auto"
+    v-if="this.myorder.length > 0"
+  >
     <div class="row d-flex">
       <div class="cart">
         <div class="head">
@@ -45,6 +48,17 @@
       </div>
     </div>
   </div>
+  <div
+    class="container"
+    v-if="this.myorder.length <= 0"
+    :class="{ noItem: myorder.length == 0 }"
+  >
+    <div class="noorder">
+      <img src="../assets/cart.webp" alt="no order" />
+      <h1>No Order Now</h1>
+      <router-link tag="a" to="/product">Shop Now</router-link>
+    </div>
+  </div>
   <TheFooter />
 </template>
 
@@ -57,7 +71,10 @@ export default {
       myorder: [],
     };
   },
+
   mounted() {
+    console.log(this.myorder.length);
+
     fetch(
       "https://mobile-market-bf248-default-rtdb.firebaseio.com/CartOrder.json"
     )
@@ -87,9 +104,31 @@ export default {
 
 
 <style scoped>
+.noItem {
+  margin-top: 58vh !important ;
+}
+.noorder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 500px;
+  margin-top: -69vh !important;
+}
+.noorder img {
+  width: 200px;
+  height: 200px;
+}
+.noorder a {
+  background-color: #f00;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
 .checkout {
   margin-top: 120px;
 }
+
 .head {
   display: flex;
   align-items: center;
