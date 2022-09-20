@@ -1,8 +1,8 @@
 <template>
   <div class="footer">
-    <div class="card mx-5">
-      <div class="row mb-4">
-        <div class="col-md-4 col-sm-11 col-xs-11">
+    <div class="card">
+      <div class="row">
+        <div class="col-lg-4 col-md-3 col-sm-11 col-xs-11 mb-4">
           <div class="footer-text pull-left">
             <div class="d-flex">
               <h1
@@ -27,9 +27,9 @@
           </div>
         </div>
 
-        <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
+        <div class="card-option col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
 
-        <div class="col-md-2 col-sm-4 col-xs-4">
+        <div class="card-option col-md-2 col-sm-4 col-xs-4">
           <h5 class="heading">OS</h5>
           <ul>
             <li>Samsung</li>
@@ -38,7 +38,7 @@
           </ul>
         </div>
 
-        <div class="col-md-2 col-sm-4 col-xs-4">
+        <div class="card-option col-lg-2 col-md-3 col-sm-4 col-xs-4">
           <h5 class="heading">Services</h5>
           <ul class="card-text">
             <li></li>
@@ -49,7 +49,7 @@
           </ul>
         </div>
 
-        <div class="col-md-2 col-sm-4 col-xs-4">
+        <div class="card-option col-lg-2 col-md-2 col-sm-4 col-xs-4">
           <h5 class="heading">Company</h5>
           <ul class="card-text">
             <li>About Us</li>
@@ -92,14 +92,13 @@
   padding: 2% 7%;
   color: #646771;
   background-color: #16151a;
-  text-align: center;
+  /* text-align: center; */
 }
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  text-align: left;
 }
 
 ul > li {
@@ -137,5 +136,21 @@ hr {
 
 .divider {
   border-top: 2px solid rgba(189, 196, 203, 0.5);
+}
+@media (max-width: 576px) {
+  .card,
+  .footer-text,
+  .card-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .pull-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

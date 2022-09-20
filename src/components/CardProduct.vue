@@ -180,6 +180,13 @@ export default {
     }
   }
 }
+
+@media (max-width: 468px) {
+  .cardProduct {
+    height: 280px;
+    width: 220px;
+  }
+}
 </style> 
 
 

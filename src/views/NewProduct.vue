@@ -49,7 +49,6 @@
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          >
           <div class="col-lg-12 show2">
             <img src="../assets/show/bannershow.webp" alt="" />
           </div>
@@ -336,7 +335,8 @@ h2::after {
 .show3,
 .show2 {
   width: 100%;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
   overflow: hidden;
   text-align: right;
   transition-delay: 1s;
@@ -424,6 +424,15 @@ h2::after {
     width: 60%;
     padding-right: 0.5rem;
     height: auto;
+  }
+}
+@media (max-width: 991px) {
+  .show1 img,
+  .show2 img,
+  .show3 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px !important;
   }
 }
 </style>

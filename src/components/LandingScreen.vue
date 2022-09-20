@@ -264,4 +264,9 @@ video {
     display: none;
   }
 }
+@media (max-width: 576px) {
+  .carousel-control-next {
+    display: none;
+  }
+}
 </style>

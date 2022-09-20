@@ -75,7 +75,7 @@
                 <div
                   class="icons search-icon"
                   id="search-btn"
-                  @click="search('search')"
+                  @click="showLayout('search')"
                 >
                   <i
                     class="fas fa-search"
@@ -126,7 +126,7 @@
                 <div
                   class="icons"
                   id="profile_form-btn"
-                  @click="profile('profile')"
+                  @click="showLayout('profile')"
                 >
                   <i
                     class="fa-solid fa-circle-user"
@@ -201,23 +201,52 @@ export default {
     };
   },
   methods: {
-    profile(option) {
-      if (this.profileAcive === "profile") {
-        this.profileAcive = null;
-      } else {
-        this.profileAcive = option;
+    showLayout(option) {
+      // Profile check
+      // if (this.profileAcive === "profile") {
+      //   this.profileAcive = null;
+      // } else {
+      //   this.profileAcive = option;
+      //   this.searchActive = null;
+      // }
+
+      // if (this.searchActive === "search") {
+      //   this.searchActive = null;
+      // } else {
+      //   this.searchActive = option;
+      //   this.profileAcive = null;
+      // }
+      // Profile check
+      if (option == "profile") {
+        if (this.profileAcive == "profile") {
+          this.profileAcive = null;
+        } else {
+          this.profileAcive = "profile";
+          this.searchActive = null;
+          this.showCart = null;
+        }
       }
-    },
-    search(option) {
-      if (this.searchActive === "search") {
-        this.searchActive = null;
-      } else {
-        this.searchActive = option;
+      // Search check
+      else if (option == "search") {
+        if (this.searchActive == "search") {
+          this.searchActive = null;
+        } else {
+          this.searchActive = "search";
+          this.profileAcive = null;
+          this.showCart = null;
+        }
       }
     },
     showCartItem() {
-      this.showCart = "show";
-
+      if (this.profileAcive == "profile" || this.searchActive == "search") {
+        this.profileAcive = null;
+        this.searchActive = null;
+        this.showCart = "show";
+      } else if (this.showCart == "show") {
+        this.showCart = null;
+      } else if (this.showCart == null) {
+        this.showCart = "show";
+      }
       fetch(
         "https://mobile-market-bf248-default-rtdb.firebaseio.com/itemCart.json"
       )
@@ -321,7 +350,7 @@ export default {
 /*  search -form */
 .sec-navbar .search {
   position: absolute;
-  top: 23vh !important;
+  top: 10vh !important;
   z-index: 1000;
   margin-left: 70px;
   opacity: 1;
@@ -365,7 +394,7 @@ export default {
 .sec-navbar .profile_form {
   position: absolute;
   z-index: 1000;
-  right: 1%;
+  right: calc(30px);
   transform: scaleY(1);
   width: 150px;
   height: 80px;
@@ -408,7 +437,7 @@ export default {
 .sec-navbar .profile_form li:hover a,
 .sec-navbar .profile_form li:hover i,
 .sec-navbar .profile_form li:hover {
-  background-color: #f00;
+  background-color: var(--blue-color);
   color: #fff !important;
 }
 
@@ -421,14 +450,14 @@ export default {
     height: fit-content;
   }
   .sec-navbar .collapse {
-    background-color: #fff !important;
+    background-color: var(--back-color) !important;
     z-index: 1000 !important;
     transition: none !important;
   }
   .sec-navbar .navbar-toggler {
-    background-color: #000;
-    color: #fff !important;
-    font-size: 25px !important;
+    background-color: var(--blue-color);
+    color: var(--red-color) !important;
+    font-size: 22px !important;
     border: none !important;
   }
   .sec-navbar .collapse .navbar-expand-lg {
@@ -436,18 +465,53 @@ export default {
     transition: none !important;
   }
   .sec-navbar .collapse a {
-    color: var(--bg-black) !important;
+    color: #000 !important;
     z-index: 100;
+    width: fit-content;
   }
   .sec-navbar .collapse a:hover {
-    color: #f00 !important;
     z-index: 100;
-    background-color: var(--bg-color-red);
+    width: fit-content;
   }
   .sec-navbar .search {
     position: absolute;
-    top: 20vh;
-    margin-left: 20px;
+    top: 15vh !important;
+    width: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .sec-navbar .search {
+    position: absolute;
+    top: 15vh !important;
+    width: 500px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .sec-navbar .search {
+    position: absolute;
+    top: 15vh !important;
+    width: 400px;
+    margin-left: 50px;
+  }
+}
+@media (max-width: 468px) {
+  .sec-navbar .search {
+    position: absolute;
+    top: 15vh !important;
+    width: 350px;
+    margin-left: 0;
+  }
+  .sec-navbar .user-setting {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px;
+  }
+  .sec-navbar .user-setting .icons {
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
   }
 }
 </style>
